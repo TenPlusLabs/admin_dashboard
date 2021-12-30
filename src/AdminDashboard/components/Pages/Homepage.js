@@ -14,7 +14,7 @@ const Homepage = () => {
             <Sidebar/>
             <div className='main-content'>
                 <Navbar/>
-                {/* <Main/> */}
+                <Main/>
                 <Routes>
                     <Route exact path='/' element={<Main/>} />
                     <Route exact path='/pages' element={<Pages/>}/>
