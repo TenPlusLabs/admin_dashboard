@@ -372,6 +372,11 @@ tr td:last-child{
         z-index: 100;
         width: 21.563rem;
     }
+
+    .media-img{
+        width:25%;
+        height: 25%;
+    }
    
     #nav-toggle:checked +.sidebar .sidebar-brand,
     #nav-toggle:checked + .sidebarli{

@@ -2,17 +2,9 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Main.css'
-import { LineChart, Line } from 'recharts';
 
 
 
-
-
-// const renderLineChart = (
-//     <LineChart width={400} height={400} data={data}>
-//       <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-//     </LineChart>
-//   );
 const TotalViews = (props) => {
     const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
     const { Title, value, details} = props;
@@ -31,9 +23,9 @@ const TotalViews = (props) => {
         <div>
             <h3>{value}</h3>
             <p>{details}</p>
-            <LineChart width={400} height={400} data={data}>
+            {/* <LineChart width={400} height={400} data={data}>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-            </LineChart>
+            </LineChart> */}
         </div>
 
     </div>
@@ -61,7 +53,7 @@ const Main = (props) => {    return (
         <main>
             <div className='container-fluid bg-light mt-4'>
                 <div className='row'>
-                    <div className='col-md-12'>
+                    <div className='col-md-12 p-5'>
                         <div className='float-left d-flex justify-content-between'>
                             <div className=' '>
                                 {/* <img src='' alt='' width='20rem' height='2rem' className='img-fluid' /> */}
@@ -70,7 +62,7 @@ const Main = (props) => {    return (
                                         position:'absolute',
                                         display:'block',
                                         transform:'translate(50,50)'
-                                    }}>a</span>
+                                    }}></span>
                                 </div>
 
                             </div>
@@ -80,11 +72,11 @@ const Main = (props) => {    return (
                             </div>
                         </div>
                         <div className='float-right d-flex'>
-                            <div className='border rounded m-2 pt-n3'>
+                            <div className='btn  rounded m-2'>
                                 <i className='las la-calender'/>
                                 <p>07/01/2021 - 04/01/2021</p>
                             </div>
-                            <div className='border rounded d-flex align-items-center m-2'>
+                            <div className='btn rounded d-flex align-items-center m-2'>
                                 <span className='las la-bars'></span>
                             </div>
                         </div>                        

@@ -1,10 +1,10 @@
 import React from 'react'
-import img from '../../src/assets/lana.jpg'
+import img from '../../../../assets/lana.jpg'
 
 const Media = () => {
     return (
         <main>
-            <div className='container-fluid'>
+            <div className='container-fluid mt-5'>
                 <div className='row'>
                     <h2 className>Media Libary</h2>
                     <div className='col-12 mt-2 mb-5'>
@@ -13,9 +13,37 @@ const Media = () => {
                             <button className='btn btn-primary'>Edit Image</button>
                         </div>
                     </div>
-                    <div className='col-3'>
-                        <img src={img} alt='' />
+                    
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div><div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
                     </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div><div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+                    <div className='col-2 mr-3 mt-3 border shadow'>
+                        <img src={img} className='img-fluid media-img' alt='' />
+                    </div>
+
                 </div>
             </div>
         </main>

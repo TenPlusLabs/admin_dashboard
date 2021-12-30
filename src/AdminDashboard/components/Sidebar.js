@@ -8,14 +8,16 @@ const Sidebar = () => {
             <input type="checkbox" name="" id="nav-toggle"/>
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2>
-                <span class="las la-igloo"></span>
-            </h2>
+           
         </div>
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <NavLink to="dashboard/" ><span class="las la-igloo"></span>
+                   
+                    <input type="search" placeholder="Search here" className='form-control-sm border-none rounded-pill p-3'/>
+                </li>
+                <li>
+                    <NavLink to="/" ><span class="las la-igloo"></span>
                     <span>Overview</span></NavLink>
                 </li>
                 <li>
@@ -23,15 +25,15 @@ const Sidebar = () => {
                     <span>Post</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="dashboard/Loans"><span class="las la-igloo"></span>
+                    <NavLink to="/media"><span class="las la-igloo"></span>
                     <span>Media</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Wallet"><span class="las la-igloo"></span>
+                    <NavLink to="/pages"><span class="las la-igloo"></span>
                      <span>Pages</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Transactions"><span class="las la-igloo"></span>
+                    <NavLink to="/comment"><span class="las la-igloo"></span>
                     <span>comments</span></NavLink>
                 </li>
                 <li>

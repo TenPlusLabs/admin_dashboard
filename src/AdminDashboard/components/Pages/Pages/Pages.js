@@ -113,38 +113,6 @@ function Pages() {
                     </div>
                 </div>
             </div>            
-            {/* <div class="cards">
-                <div className='card-container'>
-                    <div className='card-single'>
-                        <p>Account Details <span className='las la-pen'></span></p>
-                        <hr/>
-                        <p className='name'>kolade elizabeth</p>
-                        <p className='email'>email@mail.com</p>
-                        <p className='homepage-link'>change password</p>
-                    </div>
-                    <div className='card-single'>
-                        <p>Account Details <span className='las la-pen'></span></p>
-                        <hr/>
-                        <p className='name'>kolade elizabeth</p>
-                        <p className='email'>email@mail.com</p>
-                        <p className='homepage-link'>change password</p>
-                    </div>
-                    <div className='card-single'>
-                        <p>Account Details <span className='las la-pen'></span></p>
-                        <hr/>
-                        <p className='name'>kolade elizabeth</p>
-                        <p className='email'>email@mail.com</p>
-                        <p className='homepage-link'>change password</p>
-                    </div>
-                    <div className='card-single'>
-                        <p>Account Details <span className='las la-pen'></span></p>
-                        <hr/>
-                        <p className='name'>kolade elizabeth</p>
-                        <p className='email'>email@mail.com</p>
-                        <p className='homepage-link'>change password</p>
-                    </div>
-                </div>
-            </div> */}
         </main>
     )
 }
