@@ -56,7 +56,7 @@
     overflow-y:scroll;
 }
 
-.sidebar-menu a>span{
+.sidebar-menu a>#span{
    margin-right: .25rem !important;
 }
 
@@ -67,7 +67,7 @@
     padding-top: .5rem ;
     padding-bottom: .5rem;
 }
-.sidebar-menu a span:first-child {
+.sidebar-menu a #span:first-child {
     font-size: 1.5rem;
     padding-right: 1rem;
 }

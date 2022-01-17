@@ -1,8 +1,16 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import img from '../../../../assets/lana.jpg'
+import BasicModal from '../Pages/Modal';
+
+
+    
+
 
 const Media = () => {
-    return (
+
+    
+
+ return (
         <main>
             <div className='container-fluid mt-5'>
                 <div className='row'>
@@ -10,7 +18,7 @@ const Media = () => {
                     <div className='col-12 mt-2 mb-5'>
                         <div className='float-right d-flex'>
                             <button className='btn btn-primary mr-3'>Upload</button>
-                            <button className='btn btn-primary'>Edit Image</button>
+                            <button className='btn btn-primary' >Edit Image</button>
                         </div>
                     </div>
                     

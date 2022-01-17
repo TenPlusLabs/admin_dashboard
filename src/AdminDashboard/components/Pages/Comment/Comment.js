@@ -3,7 +3,31 @@ import img from '../../../../assets/lana.jpg'
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import './Comment.css'
 
-const Comment = () => {
+
+const Comments = [
+    {id:1, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' },
+    {id:2, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' },
+    {id:3, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' },
+    {id:4, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' },
+    {id:5, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' },
+    {id:6, file:img, author:'AJAPswenky', upload:'Sample post', comment:'0', date:'2021/05/05' }
+]
+
+const Table = (props) =>{
+    const { file,author,upload,comment, date }  = props;
+    return(
+        <tr>
+            <td>
+                <img src={file} alt='' className='img-fluid comment-img'/>
+            </td>
+            <td>{author}</td>
+            <td>{upload}</td>
+            <td>{comment}</td>
+            <td>{date}</td>
+        </tr>
+    )
+    }
+const Comment = (props) => {
     return (
         <main>
         <div className='container-fluid mt-5'>
@@ -32,33 +56,9 @@ const Comment = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <img src={img} alt='' className='img-fluid comment-img'/>
-                                </td>
-                                <td>AJAPswenky</td>
-                                <td>Sample post</td>
-                                <td>0</td>
-                                <td>2021/05/05</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src={img} alt='' className='img-fluid comment-img'/>
-                                </td>
-                                <td>AJAPswenky</td>
-                                <td>Sample post</td>
-                                <td>0</td>
-                                <td>2021/05/05</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src={img} alt='' className='img-fluid comment-img'/>
-                                </td>
-                                <td>AJAPswenky</td>
-                                <td>Sample post</td>
-                                <td>0</td>
-                                <td>2021/05/05</td>
-                            </tr>
+                        {Comments.map((Comment) =>
+                    <Table key={Comment.id} file={Comment.file} upload={Comment.upload} date={Comment.date} author={Comment.author} comment={Comment.comment} />
+                    )} 
                         </tbody>
                     </table>
                     </div>

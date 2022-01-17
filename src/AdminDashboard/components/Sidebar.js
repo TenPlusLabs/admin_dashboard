@@ -17,36 +17,135 @@ const Sidebar = () => {
                     <input type="search" placeholder="Search here" className='form-control-sm border-none rounded-pill p-3'/>
                 </li>
                 <li>
-                    <NavLink to="/" ><span class="las la-igloo"></span>
-                    <span>Overview</span></NavLink>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                        <div class="dropdown" id='span'>
+                            <button class="btn text-white dropdown-toggle w-100 text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dashboard
+                            </button>
+                            <div class="dropdown-menu bg-dark w-100" aria-labelledby="dropdownMenuButton">
+                                <NavLink to='/' class='pt-3 p-2 pl-5'>Overview</NavLink>
+                                <NavLink to='post' class='p-2 pl-5'>Post</NavLink>
+                                <NavLink to='media' class='p-2 pl-5'>Media</NavLink>
+                                <NavLink to='page' class='p-2 pl-5'>Pages</NavLink>
+                                <NavLink to='comment' class='p-2 pl-5'>Comments</NavLink>
+                                <NavLink to='form' class='pb-3 p-2 pl-5'>Forms</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
                 </li>
-                <li>
-                    <NavLink to="dashboard/Properties" class="active"><span class="las la-igloo"></span>
+                 <li>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                       
+                         <div class="dropdown">
+                            <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Contact
+                            </button>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                                <NavLink to='customer'>Customer</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
+                </li>
+                       
+                 <li>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                        <div class="dropdown">
+                            <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                E-commerce
+                            </button>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                               <NavLink to='customer'>Product</NavLink>
+                               <NavLink to='customer'>Project</NavLink>
+                               <NavLink to='customer'>Quotes</NavLink>
+                               <NavLink to='customer'>Invoice</NavLink>
+                               <NavLink to='customer'>Cart</NavLink>
+                               <NavLink to='customer'>Cupons</NavLink>
+                               <NavLink to='customer'>Ratings and Reviews</NavLink>
+                               <NavLink to='customer'>Payments</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
+                </li>
+                 <li>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                        <div class="dropdown">
+                            <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Portal
+                            </button>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                               <NavLink to='customer'>Portal</NavLink>
+                               <NavLink to='customer'>Coupons</NavLink>
+                               <NavLink to='customer'>Applications</NavLink>
+                               <NavLink to='customer'>Subscriptions</NavLink>
+                               <NavLink to='customer'>Payment</NavLink>
+                               <NavLink to='customer'>User Accounts</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
+                </li>
+                 <li>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                        <div class="dropdown">
+                            <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Affliates
+                            </button>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                                <NavLink to='customer'>Pages</NavLink>
+                               <NavLink to='customer'>Product Catalogue</NavLink>
+                               <NavLink to='customer'>Link</NavLink>
+                               <NavLink to='customer'>Members</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
+                </li>
+                 <li>
+                    {/* <NavLink to="" ><span class="las la-igloo"></span>
+                    <span> */}
+                        <div class="dropdown">
+                            <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Accounts
+                            </button>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                               <NavLink to='customer'>Users</NavLink>
+                               <NavLink to='customer'>My Profile</NavLink>
+                            </div>
+                        </div>
+                    {/* </span>
+                    </NavLink> */}
+                </li>
+                {/* <li>
+                    <NavLink to="post" class="active"><span class="las la-igloo"></span>
                     <span>Post</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/media"><span class="las la-igloo"></span>
+                    <NavLink to="media"><span class="las la-igloo"></span>
                     <span>Media</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/pages"><span class="las la-igloo"></span>
+                    <NavLink to="pages"><span class="las la-igloo"></span>
                      <span>Pages</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/comment"><span class="las la-igloo"></span>
+                    <NavLink to="comment"><span class="las la-igloo"></span>
                     <span>comments</span></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Refferal"><span class="las la-igloo"></span>
-                    <span>Refferal</span></NavLink>
-                </li>
-                <li>
-                    <NavLink to="/Settings"><span class="las la-igloo"></span>
-                    <span>Forms</span></NavLink>
-                </li>
-                <li>
-                    <NavLink to="dashboard/Loans"><span class="las la-igloo"></span>
+                    <NavLink to="/customer"><span class="las la-igloo"></span>
                     <span>Customer</span></NavLink>
+                </li>
+                <li>
+                    <NavLink to="/form"><span class="las la-igloo"></span>
+                    <span>Forms</span></NavLink>
                 </li>
                 <li>
                     <NavLink to="/Wallet"><span class="las la-igloo"></span>
@@ -132,7 +231,7 @@ const Sidebar = () => {
                 <li>
                     <NavLink to="/Wallet"><span class="las la-igloo"></span>
                      <span>Profile</span></NavLink>
-                </li>
+                </li> */}
             </ul>
         </div>
     </div>
