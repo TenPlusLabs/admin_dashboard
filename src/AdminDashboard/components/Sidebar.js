@@ -264,7 +264,7 @@ const Sidebar = () => {
                                 </li>
                                 
                                 <li className="submenu-item">
-                                    <NavLink to='customer'>Quotes</NavLink>
+                                    <NavLink to='quotes'>Quotes</NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink to='customer'>Cart</NavLink>
@@ -276,7 +276,7 @@ const Sidebar = () => {
                                     <NavLink to='customer'>Cupons</NavLink>
                                 </li>
                                 <li className="submenu-item">
-                                    <NavLink to='customer'>Quotes</NavLink>
+                                    <NavLink to='customer'>Support</NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink to='ratings_reviews'>Ratings and Reviews</NavLink>

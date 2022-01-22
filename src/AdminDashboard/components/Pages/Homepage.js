@@ -33,6 +33,7 @@ import CompProject from './c_projects/comp_projects'
 import Invoice from './invoices/invoice'
 import Links from './links/links'
 import Members from './members/members'
+import Quote from './quotes/quote'
 // import { Portal } from '@mui/material'
 // import Sidebar1 from '../Sidebar1'
 
@@ -73,6 +74,7 @@ const Homepage = () => {
                     <Route path='invoice' element={<Invoice />} />
                     <Route path='links' element={<Links />} />
                     <Route path='members' element={<Members />} />
+                    <Route path='quotes' element={<Quote />} />
                 </Routes>
             </div>
         // </div>
