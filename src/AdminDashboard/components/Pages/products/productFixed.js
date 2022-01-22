@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
-import BasicModal from './Modal';
+import '../Pages/Pages.css'
+import BasicModal from '../Pages/Modal';
 
 
 
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const ProductFixed = (props) => {
    
     return (
         <main>
@@ -66,14 +66,18 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
+                                <th>Product Name</th>
+                                <th>Product Url</th>
+                                <th>Category Name</th>
+                                <th>Sub Category Name</th>
+                                <th>Total Orders</th>
                                 <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Price</th>
+                                <th>Latest Order</th>
+                                <th>Date</th>
+                                <th>In stock (3)</th>
+                                <th>Total Orders</th>
+                                <th>Total Earnings on Product</th>   
                             </tr>
                         </thead>
                         <tbody>
@@ -92,6 +96,6 @@ const Page = (props) => {
             </div>   
         </main>
     )
-}
+}   
 
-export default Page
+export default ProductFixed

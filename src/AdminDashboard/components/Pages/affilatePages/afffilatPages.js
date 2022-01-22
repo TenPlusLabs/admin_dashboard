@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const AffilatePages = (props) => {
    
     return (
         <main>
@@ -94,4 +94,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default AffilatePages

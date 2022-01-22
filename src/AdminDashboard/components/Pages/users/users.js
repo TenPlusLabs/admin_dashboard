@@ -1,6 +1,6 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
+import '../Pages/Pages.css'
 import BasicModal from './Modal';
 
 
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const User = (props) => {
    
     return (
         <main>
@@ -66,14 +66,12 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Frst Name</th>
+                                <th>Last Name</th>
+                                <th>Role</th>
+                                <th>Username</th>
+                                <th>Nickname</th>
+                                <th>Date Created</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,4 +92,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default User

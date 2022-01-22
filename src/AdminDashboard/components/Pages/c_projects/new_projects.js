@@ -1,12 +1,12 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
+import '../Pages/Pages.css'
 import BasicModal from './Modal';
 
 
 
 const Rows = [
-    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
+    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2'},
     {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
     {id:3, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
     {id:4, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const NewProject = (props) => {
    
     return (
         <main>
@@ -66,14 +66,40 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Project Name</th>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Category Name</th>
+                                <th>Product Name</th>
+                                <th>Assigned to</th>
+                                <th>Assigned by</th>
+                                <th>Price</th>
+                                <th>In stock (30)</th>
+                                <th>Total Orders</th>
+                                <th>Status (New, Assigned, Completed)</th>
+                                <th>Ongoing</th>
+                                <th>Due Date</th>
+                                <th>Customer Name</th>
+                                <th>Company</th>
+                                <th>Country</th>
+                                <th>State</th>
+                                <th>
+                                    Source
+                                    {/* Source [This 
+                                    displays; Manual (+ name of 
+                                    user that added it) */}
+                                </th>
+                                <th>Store</th>
+                                <th>
+                                    Affilate Store
+                                    {/* Affiliate Store (+ name of 
+                                    link), or ChatBot], */}
+                                </th>
+                                <th>Price</th>
+                                <th>
+                                Price History
+                                 {/* (shows amount and date) */}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,4 +120,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default NewProject

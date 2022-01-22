@@ -81,7 +81,7 @@ const Form = (props) => {
     return (
         <main>
         <div className='container-fluid mt-5'>
-                <div className='row ml-5 '>
+                <div className='row ml-0'>
     <Tabs>
         <div className='d-flex justify-content-between mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>

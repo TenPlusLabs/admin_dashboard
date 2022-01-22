@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
-import BasicModal from './Modal';
+import '../Pages/Pages.css'
+import BasicModal from '../Pages/Modal';
 
 
 
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const PortalAcct = (props) => {
    
     return (
         <main>
@@ -66,14 +66,16 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone number</th>
+                                <th>Website</th>
+                                <th>Facebook</th>
+                                <th>Price</th>
+                                <th>Instagram</th>
+                                <th>Company</th>
+                                <th>Education</th>  
                             </tr>
                         </thead>
                         <tbody>
@@ -94,4 +96,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default PortalAcct

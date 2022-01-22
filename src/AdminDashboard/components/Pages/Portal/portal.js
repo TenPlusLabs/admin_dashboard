@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
-import BasicModal from './Modal';
+import '../Pages/Pages.css'
+import BasicModal from '../Pages/Modal';
 
 
 
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const Portal = (props) => {
    
     return (
         <main>
@@ -94,4 +94,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default Portal

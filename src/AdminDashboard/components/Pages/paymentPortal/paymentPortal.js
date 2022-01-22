@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
-import BasicModal from './Modal';
+import '../Pages/Pages.css'
+import BasicModal from '../Pages/Modal';
 
 
 
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const PaymentPortal = (props) => {
    
     return (
         <main>
@@ -66,19 +66,18 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Program Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Total Payments (#200)</th>
+                                <th>Total Applicants (number)</th>
                             </tr>
                         </thead>
                         <tbody>
                         {Rows.map((Row) =>
-                    <Table key={Row.id} id={Row.id} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data} page_url={Row.page_url} visit_day={Row.visit_day} visit_today={Row.visit_today} visit_month={Row.visit_month} />
+                    <Table key={Row.id} id={Row.id} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data}  />
                     )} 
                         </tbody>
                     </table>
@@ -94,4 +93,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default PaymentPortal

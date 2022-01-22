@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
-import './Pages.css'
-import BasicModal from './Modal';
+import '../Pages/Pages.css'
+import BasicModal from '../Pages/Modal';
 
 
 
@@ -27,9 +27,9 @@ const Table = (props) =>{
         <tr>
             <td>{id}</td>
             <td className='page_title'> {page_title}
-                <div className='d-flex display-none'>
+                {/* <div className='d-flex display-none'>
                 <button className='btn btn-secondary mt-3 mr-3'>Edit</button><button className='btn btn-danger mt-3'>Delete</button>
-                </div>
+                </div> */}
              </td>
             <td>{page_url}</td>
             <td>{date_published}</td>
@@ -41,7 +41,7 @@ const Table = (props) =>{
         </tr>
     )
     }
-const Page = (props) => {
+const RatingReview = (props) => {
    
     return (
         <main>
@@ -66,14 +66,18 @@ const Page = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Review Value</th>
+                                <th>Review Description</th>
+                                <th>Average Total Reviews</th>
+                                <th>Product Name</th>
+                                <th>Project Number</th>
+                                <th>Category Name</th>
+                                <th>Sub Category Name</th>
+                                <th>Project Status</th>
+                                <th>Completion Date</th>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Phone No</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,4 +98,4 @@ const Page = (props) => {
     )
 }
 
-export default Page
+export default RatingReview

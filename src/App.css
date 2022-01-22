@@ -2,7 +2,7 @@
 
 @media only screen and (max-width:1200px) {
     .sidebar {
-        width: 4.375rem;
+        width: 150px;
     }
     
     .sidebar .sidebar-brand,
