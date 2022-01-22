@@ -6,8 +6,8 @@ import BasicModal from './Modal';
 
 
 const Rows = [
-    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2'},
-    {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
+    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2', status: 'Completed'},
+    {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2', status:'(New, Assigned, Completed' },
     {id:3, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
     {id:4, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
     {id:5, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
@@ -26,9 +26,9 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
-            <td className='page_title'> {page_title}
+            <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <button className='btn btn-secondary mt-3 mr-3'>Edit</button><button className='btn btn-danger mt-3'>Delete</button>
+                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -50,10 +50,10 @@ const PendingProject = (props) => {
     <Tabs>
         <div className='d-flex justify-content-between mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
+                {/* <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
+                <Tab><button className='btn'>Bin(0)</button></Tab> */}
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
@@ -76,7 +76,7 @@ const PendingProject = (props) => {
                                 <th>Price</th>
                                 <th>In stock (30)</th>
                                 <th>Total Orders</th>
-                                <th>Status (New, Assigned, Completed)</th>
+                                <th>Status</th>
                                 <th>Ongoing</th>
                                 <th>Due Date</th>
                                 <th>Customer Name</th>

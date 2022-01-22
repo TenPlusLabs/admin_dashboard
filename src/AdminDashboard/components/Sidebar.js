@@ -189,9 +189,9 @@ const Sidebar = () => {
                             <li className="submenu-item ">
                                     <NavLink to='/affilatePages'>Pages</NavLink>
                                 </li>
-                                <li className="submenu-item">
+                                {/* <li className="submenu-item">
                                     <a href="component-badge.html">Badge</a>
-                                </li>
+                                </li> */}
                                 <li className="submenu-item ">
                                     <NavLink to='links'>Link</NavLink>
                                 </li>

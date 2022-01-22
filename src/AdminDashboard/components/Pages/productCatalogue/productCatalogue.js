@@ -26,9 +26,9 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
-            <td className='page_title'> {page_title}
+            <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <button className='btn btn-secondary mt-3 mr-3'>Edit</button><button className='btn btn-danger mt-3'>Delete</button>
+                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -50,10 +50,10 @@ const ProductCat = (props) => {
     <Tabs>
         <div className='d-flex justify-content-between mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
-                <Tab><button className='btn'>Published(0)</button></Tab>
-                <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
+                {/* <Tab><button className='btn active'>All({Rows.length})</button></Tab> */}
+                {/* <Tab><button className='btn'>Rroduct Catalogue</button></Tab>
+                <Tab><button className='btn active'>Suspended Product</button></Tab>
+                <Tab><button className='btn'>Active Product</button></Tab> */}
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
@@ -88,8 +88,6 @@ const ProductCat = (props) => {
                     </table>
                     </div>
             
-        </TabPanel>
-        <TabPanel>
         </TabPanel>
     </Tabs>
     </div>
