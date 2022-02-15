@@ -6,12 +6,12 @@ import BasicModal from '../Pages/Modal';
 
 
 const Rows = [
-    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:3, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:4, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:5, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:6, page_title:'TenPlu Lab', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' }
+    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'New', visit_today:'5', visit_month:'2' },
+    {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'Existing', visit_today:'5', visit_month:'2' },
+    {id:3, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'Both', visit_today:'5', visit_month:'2' },
+    {id:4, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'New', visit_today:'5', visit_month:'2' },
+    {id:5, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'Existing', visit_today:'5', visit_month:'2' },
+    {id:6, page_title:'TenPlu Lab', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'Both', visit_today:'5', visit_month:'2' }
 ]
 
 const Table = (props) =>{
@@ -26,18 +26,28 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
-            <td className='page_title'> {page_title}
+            <td>{page_title}</td>
+             <td className='page_title'> 
+                {page_url}
                 <div className='d-flex display-none'>
                 <span className='text-secondary mt-3 mr-3'>Change</span>
                 </div>
              </td>
-            <td>{page_url}</td>
-            <td>{date_published}</td>
+             <td className='page_title'> 
+                {date_published}
+                <div className='d-flex display-none'>
+                <span className='text-secondary mt-3 mr-3'>Change</span>
+                </div>
+             </td>
             <td>{date_description}</td>
             <td>{meta_data}</td> 
+            <td className='page_title'> 
+                {visit_day} 
+                <div className='d-flex display-none'>
+                <span className='text-secondary mt-3 mr-3'>Change</span>
+                </div>
+             </td>
             <td>{visit_today}</td>
-            <td>{visit_day}</td>
-            <td>{visit_month}</td>
         </tr>
     )
     }
@@ -48,7 +58,7 @@ const Coupons = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
@@ -66,14 +76,13 @@ const Coupons = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
-                                <th>Date Published</th>
-                                <th>Date Description</th>
-                                <th>Meta data</th>
-                                <th>No of visit's today</th>
-                                <th>No of visit's in 7 days</th>
-                                <th>No of visit's in 1 month</th>
+                                <th>Coupon Name</th>
+                                <th>Program Applicable</th>
+                                <th>Program Sub Category Name</th>
+                                <th>Status</th>
+                                <th>Coupon Expiry Date</th>
+                                <th>Users Applicable</th>
+                                <th>Customers Usage </th>
                             </tr>
                         </thead>
                         <tbody>
