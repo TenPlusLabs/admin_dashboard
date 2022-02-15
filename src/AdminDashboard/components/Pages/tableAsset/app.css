@@ -1,0 +1,352 @@
+/*
+* Mazer, Technology Innovations Bootstrap HTML5 Landing Page
+* 
+* File: app.scss
+*
+* If you want to edit the components, just go to _variables.scss
+*/
+/**
+
+====== TABLE OF CONTENTS =======
+1. Bootstrap & Variables Inside
+2. Bootstrap Components Override 
+    2.1 Alert
+    2.2 Avatar
+    2.3 Badge
+    2.4 Buttons
+    2.5 Breadcrumb
+    2.6 Carousel
+    2.7 Card
+    2.8 Divider
+    2.9 Dropdowns
+    2.10 Forms
+    2.11 Modal
+    2.12 Sidebar
+    2.13 Navs
+    2.14 Navbar
+    2.15 Pagination
+    2.16 Table
+    2.17 Progress
+4. Pages
+    4.0 Layout
+    4.1 Auth
+    4.2 Error
+5. Utilities
+
+
+*/
+
+.table td, .dataTable-table td, .table thead th, .dataTable-table thead th {
+  vertical-align: middle;
+}
+
+.table:not(.table-borderless) thead th, .dataTable-table:not(.table-borderless) thead th {
+  border-bottom: 1px solid #dedede !important;
+}
+
+.table.table-sm tr td, .table-sm.dataTable-table tr td, .table.table-sm tr th, .table-sm.dataTable-table tr th {
+  padding: 1rem;
+}
+.table.table-md tr td, .table-md.dataTable-table tr td, .table.table-md tr th, .table-md.dataTable-table tr th {
+  padding: 1rem;
+}
+.table.table-lg tr td, .table-lg.dataTable-table tr td, .table.table-lg tr th, .table-lg.dataTable-table tr th {
+  padding: 1.3rem;
+}
+
+.dataTable-container {
+  overflow-x: auto;
+}
+
+.progress.progress-primary {
+  overflow: visible;
+}
+.progress.progress-primary .progress-bar {
+  background-color: #435ebe;
+  border-radius: 0.25rem;
+}
+.progress.progress-secondary {
+  overflow: visible;
+}
+.progress.progress-secondary .progress-bar {
+  background-color: #6c757d;
+  border-radius: 0.25rem;
+}
+.progress.progress-success {
+  overflow: visible;
+}
+.progress.progress-success .progress-bar {
+  background-color: #198754;
+  border-radius: 0.25rem;
+}
+.progress.progress-info {
+  overflow: visible;
+}
+.progress.progress-info .progress-bar {
+  background-color: #0dcaf0;
+  border-radius: 0.25rem;
+}
+.progress.progress-warning {
+  overflow: visible;
+}
+.progress.progress-warning .progress-bar {
+  background-color: #ffc107;
+  border-radius: 0.25rem;
+}
+.progress.progress-danger {
+  overflow: visible;
+}
+.progress.progress-danger .progress-bar {
+  background-color: #dc3545;
+  border-radius: 0.25rem;
+}
+.progress.progress-light {
+  overflow: visible;
+}
+.progress.progress-light .progress-bar {
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
+.progress.progress-dark {
+  overflow: visible;
+}
+.progress.progress-dark .progress-bar {
+  background-color: #212529;
+  border-radius: 0.25rem;
+}
+.progress.progress-sm {
+  height: 0.4rem;
+}
+.progress.progress-lg {
+  height: 1.5rem;
+}
+.progress .progress-bar {
+  position: relative;
+  overflow: visible;
+}
+.progress .progress-bar.progress-label:before {
+  content: attr(aria-valuenow) "%";
+  position: absolute;
+  right: 0;
+  top: -1.3rem;
+  color: #495057;
+  font-size: 0.8rem;
+}
+
+.bi {
+  width: 1rem;
+  height: 1rem;
+}
+.bi.bi-middle:before {
+  vertical-align: middle;
+}
+.bi.bi-sub:before {
+  vertical-align: sub;
+}
+
+.stats-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stats-icon i {
+  color: #fff;
+  font-size: 1.7rem;
+}
+.stats-icon.purple {
+  background-color: #9694ff;
+}
+.stats-icon.blue {
+  background-color: #57caeb;
+}
+.stats-icon.red {
+  background-color: #ff7976;
+}
+.stats-icon.green {
+  background-color: #5ddab4;
+}
+@media (max-width: 767px) {
+  .stats-icon {
+    float: left;
+    margin-bottom: 0.4rem;
+  }
+}
+
+.burger-btn {
+  display: none;
+}
+
+#main {
+  margin-left: 300px;
+  padding: 2rem;
+}
+@media screen and (max-width: 1199px) {
+  #main {
+    margin-left: 0;
+  }
+}
+#main.layout-navbar {
+  padding: 0;
+}
+#main.layout-horizontal {
+  padding: 0;
+  margin: 0;
+}
+#main #main-content {
+  padding: 2rem;
+}
+
+.page-heading {
+  margin: 0 0 2rem;
+}
+.page-heading h3 {
+  font-weight: bold;
+}
+
+.page-title-headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.page-title-headings h3 {
+  margin-bottom: 0;
+  margin-right: 1rem;
+}
+.page-title-headings .breadcrumb {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mt-10 {
+  margin-top: 3rem;
+}
+
+.mb-10 {
+  margin-bottom: 3rem;
+}
+
+.my-10 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
+.my-24 {
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+.py-4-5 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-6xl {
+  font-size: 4rem;
+}
+
+.text-black {
+  color: #000;
+}
+
+.bg-gradient-ltr {
+  background: linear-gradient(to right, #095CDE, #53C3F3);
+}
+
+.bg-light-primary {
+  background-color: #ebf3ff;
+  color: #002152;
+}
+
+.bg-light-secondary {
+  background-color: #E6EAEE;
+  color: #181e24;
+}
+
+.bg-light-success {
+  background-color: #D2FFE8;
+  color: #00391c;
+}
+
+.bg-light-danger {
+  background-color: #FFDEDE;
+  color: #450000;
+}
+
+.bg-light-warning {
+  background-color: #fffdd8;
+  color: #3f3c00;
+}
+
+.bg-light-info {
+  background-color: #e6fdff;
+  color: #00474d;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.text-width-md {
+  max-width: 450px;
+}
+
+.text-gray-300 {
+  color: #dee2e6 !important;
+}
+
+.text-gray-400 {
+  color: #ced4da !important;
+}
+
+.text-gray-500 {
+  color: #adb5bd !important;
+}
+
+.text-gray-600 {
+  color: #6c757d !important;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+}
+
+.icon-mid:before {
+  vertical-align: middle;
+}

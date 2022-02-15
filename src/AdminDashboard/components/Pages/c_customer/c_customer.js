@@ -1,17 +1,17 @@
 import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from './Modal';
+import {BasicModal, EditCustomerModal } from './Modal';
 
 
 
 const Rows = [
-    {id:1, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
-    {id:2, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
-    {id:3, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
-    {id:4, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
-    {id:5, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
-    {id:6, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'0', company_total_orders:'2021/05/05', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'}
+    {id:1, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10' ,active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
+    {id:2, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
+    {id:3, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
+    {id:4, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
+    {id:5, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'},
+    {id:6, name:'TenPlus Labs', last_name:'AJAPswenky', email:'05-01-2021', phone_number:'09125259133', company_total_orders:'2021/05/05', total_order:'10', active_orders:'0', country:'Algeria', state:'Okalhoma', customer:'chief', wallet_amount:'N900,000', order_amount:'N200,000'}
 ]
 
 const Table = (props) =>{
@@ -23,8 +23,8 @@ const Table = (props) =>{
             <td>{id}</td>
              <td className='page_title' style={{width:'200px'}}> {name}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span>
-                <span className='text-danger mt-3'>Delete</span>
+                    <EditCustomerModal />
+                    <span className='text-danger '>Delete</span>
                 </div>
              </td>
             <td>{last_name}</td>
@@ -48,10 +48,10 @@ const ContactCustomer = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
-                <Tab><button className='btn'>Published(0)</button></Tab>
+                <Tab><button className='btn'>Published(0)</button></Tab> 
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
                 <Tab><button className='btn'>Bin(0)</button></Tab>
                 {/* <Tab><BasicModal /></Tab> */}
@@ -71,13 +71,23 @@ const ContactCustomer = (props) => {
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Company Total Order</th>
-                                <th>Date Published</th>
-                                <th>Name</th>
+                                <th>Active Order</th>
+                                <th>Copmany Name</th>
                                 <th>Country</th>
                                 <th>State</th>
-                                <th>C_Customer</th>
+                                <th>Name</th>
                                 <th>Wallet Amount</th>
                                 <th>Order Amount</th>
+{/* Phone Number, Company,
+Total Orders, Active Order
+Name (shows only order 
+number separated by 
+commas and each clickable 
+to that order), Country, 
+State, Customer Since (i.e. 
+Date), Current Amount in 
+Wallet, Amount Spent on 
+Orders */}
                             </tr>
                         </thead>
                         <tbody>

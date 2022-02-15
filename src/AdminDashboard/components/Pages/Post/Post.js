@@ -1,16 +1,18 @@
 import React from 'react' 
+import { NavLink } from 'react-router-dom';
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+
+import {PostModal,PostSetting } from './modal';
 // import '../Pages/Pages.css'
 import './Post.css'
 
-
 const Rows = [
-    {id:1, title:'TenPlus Labs', author:'AJAPswenky', category:'published', tag:'0', comment:'0', date_published:'2021/05/05'},
-    {id:2, title:'TenPlus Labs', author:'AJAPswenky', category:'published', tag:'0', comment:'0', date_published:'2021/05/05'},
-    {id:3, title:'TenPlus Labs', author:'AJAPswenky', category:'05-01-2021', tag:'0', comment:'0', date_published:'2021/05/05'},
-    {id:4, title:'TenPlus Labs', author:'AJAPswenky', category:'draft', tag:'0', comment:'0', date_published:'2021/05/05'},
-    {id:5, title:'TenPlus Labs', author:'AJAPswenky', category:'bin', tag:'0', comment:'0', date_published:'2021/05/05'},
-    {id:6, title:'TenPlus Labs', author:'AJAPswenky', category:'draft', tag:'0', comment:'0', date_published:'2021/05/05'}
+    {id:1, title:'TenPlus Labs', author:'AJAPswenky', category:'published', tag:'0', comment:'yoo guy', date_published:'2021/05/05'},
+    {id:2, title:'TenPlus Labs', author:'AJAPswenky', category:'published', tag:'0', comment:'yoo guy', date_published:'2021/05/05'},
+    {id:3, title:'TenPlus Labs', author:'AJAPswenky', category:'05-01-2021', tag:'0', comment:'yoo guy', date_published:'2021/05/05'},
+    {id:4, title:'TenPlus Labs', author:'AJAPswenky', category:'draft', tag:'0', comment:'yoo guy', date_published:'2021/05/05'},
+    {id:5, title:'TenPlus Labs', author:'AJAPswenky', category:'bin', tag:'0', comment:'yoo guy', date_published:'2021/05/05'},
+    {id:6, title:'TenPlus Labs', author:'AJAPswenky', category:'draft', tag:'0', comment:'yoo guy', date_published:'2021/05/05'}
 ]
 
 const publishedRow  = Rows.filter(el => el.category === 'published')
@@ -28,13 +30,18 @@ const Table = (props) =>{
     return(        
 
         <tr>
+            <td><input type='checkbox'/></td>
             <td>{id}</td>
             <td className='page_title' style={{width: '200px'}}> 
                 {title}
                 <div className='d-flex display-none'>
-                    <span className='text-primary mt-3 mr-3'>Add</span>
+                    <span className='text-primary mt-3 mr-3'>
+                       <NavLink to={`PostEdit?post=${id}`}> Edit </NavLink>
+                    </span>
                     <br/>
-                    <span className='text-secondary mt-3 mr-3'>Edit</span>
+                    <span className='text-secondary mt-3 mr-3'>
+                        <NavLink to={`PostView?post=${id}`} target='_blank'>View</NavLink>
+                    </span>
                     <br/>
                     <span className='text-danger mt-3'>Delete</span>
                 </div>
@@ -43,10 +50,8 @@ const Table = (props) =>{
             <td>{category}</td>
             <td>{tag}</td>
             <td>{comment}</td> 
-            <td>{date_published}</td>
-            {/* <td><button className='btn btn-primary mt-3 mr-3'>Add</button></td>
-            <td><button className='btn btn-secondary mt-3 mr-3'>Edit</button></td>
-            <td><button className='btn btn-danger mt-3'>Delete</button></td> */}
+            <td>{date_published}</td>   
+            <td><PostSetting/></td>
         </tr>
     )
     }
@@ -58,13 +63,12 @@ const Post = (props) => {
                 <div className='row ml-5'>
     <Tabs>
         <div className='d-flex justify-content-between mb-3'>
-            <TabList className='col-md-5 d-flex justify-content-around ml-5'>
+            <TabList className='col-md-5 col-lg-10 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
                 <Tab><button className='btn'>Bin(0)</button></Tab>
-                {/* <Tab><BasicModal /></Tab> */}
-                {/* <BasicModal /> */}
+                <PostModal />
             </TabList>
         </div>
             <TabPanel>
@@ -73,6 +77,7 @@ const Post = (props) => {
                     <table className=' bg-light p-5 shadow text-blue table-responsive'>
                         <thead>
                             <tr>
+                                <th><input type='checkbox'/></th>
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Author</th>
@@ -80,6 +85,7 @@ const Post = (props) => {
                                 <th>Tags</th>
                                 <th>Comment</th>
                                 <th>Date Published</th>
+                                <th>Post Settings</th>
                             </tr>
                         </thead>
                          
@@ -99,6 +105,7 @@ const Post = (props) => {
                     <table className=' bg-light p-5 shadow text-blue table-responsive'>
                         <thead>
                             <tr>
+                                <th><input type='checkbox'/></th>
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Author</th>
@@ -126,6 +133,7 @@ const Post = (props) => {
                     <table className=' bg-light p-5 shadow text-blue table-responsive'>
                         <thead>
                             <tr>
+                                <th><input type='checkbox'/></th>
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Author</th>
@@ -153,6 +161,7 @@ const Post = (props) => {
                     <table className=' bg-light p-5 shadow text-blue table-responsive'>
                         <thead>
                             <tr>
+                                <th><input type='checkbox'/></th>
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Author</th>

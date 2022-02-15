@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import Form from './Form';
+import { Form, EditCustomerForm } from './Form';
 
 const style = {
   position: 'absolute',
@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-function BasicModal(prop) {
+export function BasicModal(prop) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -47,4 +47,24 @@ function BasicModal(prop) {
   );
 }
 
-export default BasicModal
+export function EditCustomerModal(prop) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <div>
+      <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+           <EditCustomerForm />
+        </Box>
+      </Modal>
+    </div>
+  );
+}

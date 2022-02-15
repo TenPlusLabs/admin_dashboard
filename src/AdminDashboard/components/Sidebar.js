@@ -1,39 +1,136 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
 import './sidebar.css'
 import './Main.css'
-import { AddCircleOutlineSharp,AiOutlineSearch, Search } from '@mui/icons-material'
+import {Search } from '@mui/icons-material'
 
 const Sidebar = () => {
+
     const [list,setList] = useState(0)
-    // const [screeen, setScreen] = useState()
-    
+    const [subList,setSubList] = useState(0)
+    const [side_opens, setSideOpens] = useState(false)
+   
     function showMenu(val){
         if(list === val){
             setList(0)
+            if(window.innerWidth >= 800){
+                document.querySelector("#sidebar").style.width = '19.563rem';
+            }
         }else{
             setList(val)
+            const cb = document.querySelector('#nav-toggle')
+            cb.checked = false
+            document.querySelector(".main-content").classList.add('open')
+            setSideOpens(false)
         }
     }
 
-    // const setBar = ()=>{
-    //     if(window.innerWidth === 950){
-    //         alert('yo')
-    //     }
-    // }
+    function showSubMenu(val){
+        if(subList === val){
+            setSubList(0)
+            // alert('set o',subList)
+        }else{
+            setSubList(val)
+            alert(subList)
+        }
+    }
 
-    // window.addEventListener('resize',()=>{
-    //     if(window.innerWidth <= 700){
-    //        document.getElementById('sidebar').style.display = 'none'
-    //     }
-    // })
+    const side_open = ()=>{
+        if(side_opens === false){
+            document.querySelector(".sidebar").style.display = "block";
+            document.querySelector(".main-content").classList.add('open')
+            document.querySelector('.main-content').classList.add('closedSide')
+            document.querySelector('header').classList.add('openSidebar')
+            document.querySelector('.sidebar').classList.add('opened')
+            // setList(0)
+           if(window.innerWidth >= 1200 ){
+                const span = document.querySelectorAll('.sidebar li a span:last-child')
+                for(let i = 0; i < span.length; i++){
+                    span[i].style.display = 'none'
+                }
+                // alert('fksfvpl')
+           }else if(window.innerWidth >= 1000){
+                const span = document.querySelectorAll('.sidebar li a span:last-child')
+                for(let i = 0; i < span.length; i++){
+                    span[i].style.display = 'block'
+                }
+                // alert('sfvvkppkokpopjkoopoijk')
+           }
+            document.querySelector('.sidebar').classList.remove('closed')
+            setList(0)
+            // alert('close')
+
+        }else{
+
+            document.querySelector(".main-content").classList.add('header')
+            document.querySelector("header").classList.remove('openSidebar')
+            document.querySelector(".main-content").classList.remove('open')
+            document.querySelector('.main-content').classList.remove('closedSide')
+            document.querySelector('.sidebar').classList.remove('opened')
+                    if(window.innerWidth >= 1200 ){
+                        const span = document.querySelectorAll('.sidebar li a span:last-child')
+                        for(let i = 0; i < span.length; i++){
+                            span[i].style.display = 'block'
+                        }
+                        // alert('goop')
+                    }else if(window.innerWidth >= 1000){
+                        const span = document.querySelectorAll('.sidebar li a span:last-child')
+                        for(let i = 0; i < span.length; i++){
+                            span[i].style.display = 'none'
+                        }
+                        // alert('vsfvssDFfsFC')
+                    } 
+                    // alert('sfsfbdii')   
+            }
+        }
+    const handleClick = ()=> {
+        setSideOpens(!side_opens);
+        side_open()
+    }
+
+    useEffect(()=>{
+        const li = document.querySelectorAll('.has-sub')
+        for(var i = 0; i < li.length; i++){
+            li[i].addEventListener('click',()=>{
+                const smscreensidebar = ()=>{
+                    if(window.innerWidth >= 800){
+                        if(side_opens === true){
+                            document.querySelector(".sidebar").style.width = '150px';
+                            document.querySelector('.sidebar').classList.remove('opened')
+                            document.querySelector('.sidebar').classList.add('closed')
+                            document.querySelector('header').classList.add('openSidebar')
+                            document.querySelector(".main-content").classList.add('open')
+                             document.querySelector('.main-content').classList.add('closedSide')
+                            // alert('closed')
+                            setList(0)
+                        }else{
+                            document.querySelector(".sidebar").style.width = '19.563rem !important';
+                            // alert('closed false will move left navbar') 
+                            // alert('open')
+                            const span = document.querySelectorAll('.sidebar li a span:last-child')
+                            for(var i = 0; i < span.length; i++){
+                                span[i].style.display = 'block'
+                            }
+                            document.querySelector(".main-content").classList.remove('open')
+                            document.querySelector('.main-content').classList.remove('closedSide')
+                            document.querySelector('.sidebar').classList.add('opened')
+                            document.querySelector('header').classList.remove('openSidebar')
+                            document.querySelector('.sidebar').classList.remove('closed')
+                        }
+                    }else{
+                        //  alert('i see you 1000')
+                    }
+                }
+                smscreensidebar()
+            })
+        }
+           
+    },[])
+        
     
-    // if(window.innerWidth <= 700){
-    //        document.getElementById('sidebar').style.display = 'none'
-    //     }
+
+
     
-
-
     return (
         <>
     <div id="sidebar" className="active" style={{overflow: 'auto'}}>
@@ -45,38 +142,13 @@ const Sidebar = () => {
             </div>
 
      <div className="sidebar-menu">
-        <input type="checkbox" name="" id="nav-toggle"/>
+        <input type="checkbox" name="" id="nav-toggle" onChange={()=> handleClick()}/>
         <div className="sidebar">
             <div className="sidebar-brand"> 
             <li>
             
 
-
-            {/* <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                class="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-                style={
-                    {
-                        paddingLeft: 0,
-                        margintop: '2rem',
-                        padding: '10.5px',
-                        fontWeight: '600',
-                        border: 'none',
-                        borderRadius: '8px 0 0 8px',
-                        marginTop: '10px',
-                        width: '10%',
-                        boxSizing: 'border-box',
-                        color: 'blue',  
-                    }
-            } 
-            >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg> 
-            */}
-            <div style={{display:'flex', alignItems: 'center', marginTop:'10px'}}>
+            <div  className='search' style={{display:'flex', alignItems: 'center', marginTop:'10px'}}>
             <span className='searchBtn'>
                 <Search/>
             </span>
@@ -164,8 +236,11 @@ const Sidebar = () => {
                                 <li className="submenu-item">
                                     <NavLink to='/coupons'>Coupons</NavLink>
                                 </li>
+                                <li className="submenu-item">
+                                    <NavLink to='/programs'>Programs</NavLink>
+                                </li>
                                 <li className="submenu-item ">
-                                    <NavLink to='customer'>Applications</NavLink>
+                                    <NavLink to='/application'>Applications</NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink to='/subscription'>Subscriptions</NavLink>
@@ -224,56 +299,61 @@ const Sidebar = () => {
                             <br/>
                             <ul className={`submenu ${list === 4 && 'active'}`}>
                                 {/* convert to sub menue */}
-                                <li className="submenu-item">
-                                    <NavLink to='#'>Product</NavLink>
-                                    <ul>
+                                <li className={`sidebar-item has-sub ${subList === 9 && 'subListActive'}`} onMouseEnter={()=> setSubList(9)} onMouseLeave={()=> setSubList(0)}>
+                                    <a href="#" style={{background:'transparent'}} className='sidebar-link'>
+                                        <span>Product</span>
+                                    </a>
+                                    <ul className={`submenu ${subList === 9 && 'subListActive'}`}>
                                         <li className="submenu-item">
-                                            <NavLink to='/productCatalogue'>Product Catalogue</NavLink>
+                                            <NavLink to='/productCatalogue'>Catalogue</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/productFixed'>Products (Fixed Price)</NavLink>
+                                            <NavLink to='/productFixed'>Fixed Price</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/productSelect'>Plans (Select Feature)</NavLink>
+                                            <NavLink to='/productSelect'>Product Plans</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/productSub'>Products (Plans or Subscriptions)</NavLink>
+                                            <NavLink to='/productSub'>Subscriptions</NavLink>
                                         </li>
                                     </ul>
                                 </li>
 
-                                <li className="submenu-item">
-                                    <NavLink to='#'>Projects</NavLink>
-                                    <ul>
+
+                                <li className={`sidebar-item has-sub ${subList === 10 && 'subListActive'}`} onMouseEnter={()=> setSubList(10)} onMouseLeave={()=> setSubList(0)}>
+                                    <a href="#" style={{background:'transparent'}} className='sidebar-link'>
+                                        <span>Projects</span>
+                                    </a>
+                                    <ul className={`submenu ${subList === 10 && 'subListActive'}`}>
                                         <li className="submenu-item">
-                                            <NavLink to='/project_order'>Projects (Orders)</NavLink>
+                                            <NavLink to='/project_order'>Orders</NavLink>
                                         </li>
                                         <li className="submenu-item">
                                             <NavLink to='/new_projects'>New Projects</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/pending_project'>Assigned Projects</NavLink>
+                                            <NavLink to='/pending_project'>Pending</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/ongoing_project'>Ongoing Projects</NavLink>
+                                            <NavLink to='/ongoing_project'>Ongoing</NavLink>
                                         </li>
                                         <li className="submenu-item">
-                                            <NavLink to='/completed_project'>Completed Projects</NavLink>
+                                            <NavLink to='/completed_project'>Completed</NavLink>
                                         </li>
                                     </ul>
                                 </li>
-                                
+
                                 <li className="submenu-item">
                                     <NavLink to='quotes'>Quotes</NavLink>
                                 </li>
                                 <li className="submenu-item">
-                                    <NavLink to='customer'>Cart</NavLink>
+                                    <NavLink to='cart'>Cart</NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink to='invoice'>Invoice</NavLink>
                                 </li>
                                 <li className="submenu-item">
-                                    <NavLink to='customer'>Cupons</NavLink>
+                                    <NavLink to='/coupons'>Cupons</NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink to='customer'>Support</NavLink>

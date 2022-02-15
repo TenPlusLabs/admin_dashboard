@@ -1,21 +1,22 @@
 import React, {useState} from 'react' 
+import { Link } from 'react-router-dom';
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from '../Pages/Modal';
+import {ProductCatalogue} from './Modal';
 
 
 
 const Rows = [
-    {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:2, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:3, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:4, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:5, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
-    {id:6, page_title:'TenPlu Lab', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' }
+    {id:1, page_title:'TenPlus Labs', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2',in_stock:'5' },
+    {id:2, page_title:'TenPlus Labs', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2',in_stock:'5' },
+    {id:3, page_title:'TenPlus Labs', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2',in_stock:'5' },
+    {id:4, page_title:'TenPlus Labs', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2',in_stock:'5' },
+    {id:5, page_title:'TenPlus Labs', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2' ,in_stock:'5'},
+    {id:6, page_title:'TenPlu Lab', product_url:'https://tenplus.com', sub_category:'some sub cat', date_description:'0', price:'200,000',date:'2021/05/05', category:'some cat', total_oders:'5', latest_in_order:'2',in_stock:'5' }
 ]
 
 const Table = (props) =>{
-    const {id, page_title,page_url,date_published,date_description,meta_data, visit_today, visit_day, visit_month  }  = props;
+    const {id, page_title,date,product_url,sub_category,category,in_stock, total_oders, price, latest_in_order  }  = props;
    
     // const [openModal, setOpenModal] = useState('');
     // const handleShow = () => {
@@ -28,16 +29,20 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <span className='text-secondary mt-3 mr-3'>Edit</span>
+                <span className='text-primary mt-3 mr-3'><Link to={`/product/productView?prod=${id}`}>View</Link></span>
+                <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
-            <td>{page_url}</td>
-            <td>{date_published}</td>
-            <td>{date_description}</td>
-            <td>{meta_data}</td> 
-            <td>{visit_today}</td>
-            <td>{visit_day}</td>
-            <td>{visit_month}</td>
+            <td>{product_url}</td>
+            <td>{category}</td>
+            <td>{sub_category}</td> 
+            <td>{total_oders}</td>
+            <td>{in_stock}</td> 
+            <td>{price}</td>
+            <td>{latest_in_order}</td>
+            <td>{date}</td>
+            <td>{in_stock}</td> 
         </tr>
     )
     }
@@ -57,7 +62,7 @@ const ProductCat = (props) => {
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
-            <div className='margin'> <BasicModal /> </div>
+            <div className='margin'> <ProductCatalogue /> </div>
         </div>
             <TabPanel>
                 
@@ -82,7 +87,7 @@ const ProductCat = (props) => {
                         </thead>
                         <tbody>
                         {Rows.map((Row) =>
-                    <Table key={Row.id} id={Row.id} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data} page_url={Row.page_url} visit_day={Row.visit_day} visit_today={Row.visit_today} visit_month={Row.visit_month} />
+                    <Table key={Row.id} id={Row.id} page_title={Row.page_title} sub_category={Row.sub_category} category={Row.category} in_stock={Row.in_stock} product_url={Row.product_url} date={Row.date} price={Row.price} total_oders={Row.total_oders} latest_in_order={Row.latest_in_order} />
                     )} 
                         </tbody>
                     </table>

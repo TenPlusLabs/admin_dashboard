@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from './Modal';
+import BasicModal, { EditNewProjectModal } from './Modal';
 
 
 
@@ -28,7 +28,9 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width: '150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                    <EditNewProjectModal />
+                    <span className='text-primary mt-3 mr-3'>View</span>
+                    <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -48,7 +50,7 @@ const NewProject = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-center mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 {/* <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
@@ -73,11 +75,11 @@ const NewProject = (props) => {
                                 <th>Product Name</th>
                                 <th>Assigned to</th>
                                 <th>Assigned by</th>
+                                <th>Milestone</th>
                                 <th>Price</th>
-                                <th>In stock (30)</th>
+                                <th>In stock ({Rows.length  })</th>
                                 <th>Total Orders</th>
-                                <th>Status (New, Assigned, Completed)</th>
-                                <th>Ongoing</th>
+                                <th>Status </th>
                                 <th>Due Date</th>
                                 <th>Customer Name</th>
                                 <th>Company</th>
@@ -104,7 +106,7 @@ const NewProject = (props) => {
                         </thead>
                         <tbody>
                         {Rows.map((Row) =>
-                    <Table key={Row.id} id={Row.id} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data} page_url={Row.page_url} visit_day={Row.visit_day} visit_today={Row.visit_today} visit_month={Row.visit_month} />
+                    <Table key={Row.id} id={Row.id} milestone={Row.milestone} status={Row.status} classColor={Row.classColor} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data} page_url={Row.page_url} visit_day={Row.visit_day} visit_today={Row.visit_today} visit_month={Row.visit_month} />
                     )} 
                         </tbody>
                     </table>

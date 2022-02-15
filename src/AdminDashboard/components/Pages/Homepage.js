@@ -24,6 +24,7 @@ import User from './users/users'
 import ProductFixed from './products/productFixed'
 import ProductSelect from './products/productSelect'
 import ProductSub from './products/productSub'
+import ProductView from './productCatalogue/productView'
 import ContactCustomer from './c_customer/c_customer'
 import ProjectOrder from './c_projects/project_order'
 import NewProject from './c_projects/new_projects'
@@ -34,6 +35,16 @@ import Invoice from './invoices/invoice'
 import Links from './links/links'
 import Members from './members/members'
 import Quote from './quotes/quote'
+import Cart from './carts/cart'
+import Datatable from './datatable'
+import DatatablePage from './datatable2'
+import PostEdit from './Post/PostEdit'
+import PostView from './Post/postView'
+import NewPost from './Post/NewPost'
+import MediaEdit from './Media/mediaEdit'
+import CommentEdit from './Comment/ReplyComments'
+import ProductFixedView, { ProductSubView } from './products/productView'
+import Programs from './programs/programs'
 // import { Portal } from '@mui/material'
 // import Sidebar1 from '../Sidebar1'
 
@@ -41,18 +52,17 @@ const Homepage = () => {
     return (
         <div>
             <Sidebar/>
-            {/* <Sidebar1 /> */}
-            {/* <div className='main-content'> */}
+            <div className='main-content' id='main-content'>
                 <Navbar/>
                 <Routes>
-                    <Route exact path='' element={<Main/>} />
+                    <Route exact path='/' element={<Main/>} />
                     <Route exact path='pages' element={<Pages/>}/>
-                    <Route exact path='page' element={<Page/>}/>
-                    <Route exact path='media' element={<Media/>} />
-                    <Route exact path='comment' element={<Comment/>} />
-                    <Route exact path='form' element={<Form/>} />
-                    <Route exact path='post' element={<Post/>} />
-                    <Route exact path='customer' element={<Customer/>} />
+                    <Route  path='page' element={<Page/>}/>
+                    <Route  path='media' element={<Media/>} />
+                    <Route  path='comment' element={<Comment/>} />
+                    <Route  path='form' element={<Form/>} />
+                    <Route  path='post' element={<Post/>} />
+                    <Route  path='customer' element={<Customer/>} />
                     <Route path='portal' element={<Portal/>} />
                     <Route path='coupons' element={<Coupons />} />
                     <Route path='ratings_reviews' element={<RatingReview />} />
@@ -75,9 +85,21 @@ const Homepage = () => {
                     <Route path='links' element={<Links />} />
                     <Route path='members' element={<Members />} />
                     <Route path='quotes' element={<Quote />} />
+                    <Route path='cart' element={<Cart />} />
+                    <Route path='dataTable' element={<Datatable />} />
+                    <Route path='DatatablePage' element={<DatatablePage /> } />
+                    <Route path='/post/PostEdit' element={<PostEdit />} />
+                    <Route path='/post/PostView' element={<PostView />} />
+                    <Route path='/post/NewPost' element={<NewPost/>} />
+                    <Route path='/media/MediaEdit' element={<MediaEdit/>} />
+                    <Route path='/comment/commentEdit' element={<CommentEdit />} />
+                    <Route path='/product/productView' element={<ProductView />} />
+                    <Route path='/product/productFixedView' element={<ProductFixedView />} />
+                    <Route path='/product/productSubView' element={<ProductSubView />} />
+                    <Route path='/programs' element={<Programs />}  />
                 </Routes>
             </div>
-        // </div>
+         </div>
     )
 }
 

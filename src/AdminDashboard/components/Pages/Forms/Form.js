@@ -2,6 +2,7 @@ import React, { useDisclosure} from 'react'
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
 import BasicModal from '../Pages/Modal';
+import { FormModal, FormViewModal } from './modal';
 // import {
 //     Modal,
 //     ModalOverlay,
@@ -17,12 +18,12 @@ import BasicModal from '../Pages/Modal';
 
 
 const Rows = [
-    {id:1, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'},
-    {id:2, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'},
-    {id:3, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'},
-    {id:4, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'},
-    {id:5, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'},
-    {id:6, form_name:'TenPlus Labs', form_page:'AJAPswenky', total_unread:'01', total_response:'05'}
+    {id:1, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'},
+    {id:2, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'},
+    {id:3, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'},
+    {id:4, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'},
+    {id:5, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'},
+    {id:6, form_name:'TenPlus Labs', form_page:'https://tenplus.com', total_unread:'01', total_response:'05'}
 ]
 
 const Table = (props) =>{
@@ -35,8 +36,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title'  colspan="2" style={{width:'200px'}}> {form_name}
                 <div className='d-flex display-none'>
-                <span className='text-primary mt-3 mr-3' >View</span>
-                <span className='text-secondary mt-3 mr-3'>Edit</span>
+                <FormViewModal />
+                <FormModal />
                 <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
@@ -83,7 +84,7 @@ const Form = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-0'>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
@@ -100,7 +101,7 @@ const Form = (props) => {
                             <tr>
                                 <th>ID</th>
                                 <th colspan="2">Form Name</th>
-                                <th>Form Page</th>
+                                <th>Form Page Url</th>
                                 <th>Total Unread</th>
                                 <th>Total Response</th>
                             </tr>

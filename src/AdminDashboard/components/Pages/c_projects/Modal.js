@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import Form from './Form';
-import { Chat, Edit, Looks } from '@mui/icons-material';
+import {Form, EditOrderForm, EditNewProjectForm, EditPendingProjectForm } from './Form';
+import { Chat, Edit } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -19,7 +18,7 @@ const style = {
   p: 4,
 };
 
-function BasicModal(prop) {
+export  default function BasicModal(prop) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -53,4 +52,91 @@ function BasicModal(prop) {
   );
 }
 
-export default BasicModal
+export function EditOrderModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <span onClick={handleOpen} className='text-secondary mt-3 mr-3'>Edit</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+           <EditOrderForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+export function EditNewProjectModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <span onClick={handleOpen} className='text-secondary mt-3 mr-3'>Edit</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+           <EditNewProjectForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+export function EditPendingModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <span onClick={handleOpen} className='text-secondary mt-3 mr-3'>Edit</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+           <EditPendingProjectForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+
+export function EditOngoingModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <span onClick={handleOpen} className='text-secondary mt-3 mr-3'>Edit</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+           <EditPendingProjectForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}

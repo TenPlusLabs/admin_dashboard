@@ -1,7 +1,7 @@
-import React, {useState} from 'react' 
-import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import React from 'react' 
+import { TabList, TabPanel, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from './Modal';
+import BasicModal, { EditPendingModal } from './Modal';
 
 
 
@@ -26,9 +26,11 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
-            <td className='page_title' style={{width:'150px'}}> {page_title}
+            <td className='page_title'> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <EditPendingModal />
+                <span className='text-primary mt-3 mr-3'>View</span>
+                <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -57,7 +59,7 @@ const PendingProject = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-center mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 {/* <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>

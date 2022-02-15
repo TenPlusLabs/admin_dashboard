@@ -1,7 +1,7 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from '../Pages/Modal';
+import PortalNewModal, { PortalEditModal } from './Modal';
 
 
 
@@ -28,7 +28,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <PortalEditModal />
+                <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -46,9 +47,13 @@ const Portal = (props) => {
     return (
         <main>
         <div className='container-fluid mt-5'>
-                <div className='row ml-5 '>
+                <div className='row ml-5'>
+    
+                </div>
+        </div>  
+
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
@@ -57,7 +62,7 @@ const Portal = (props) => {
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
-            <div className='margin'> <BasicModal /> </div>
+            <div className='margin'> <PortalNewModal /> </div>
         </div>
             <TabPanel>
                 
@@ -66,8 +71,8 @@ const Portal = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Page Title</th>
-                                <th>Page URL</th>
+                                <th>Portal Title</th>
+                                <th>Portal URL</th>
                                 <th>Date Published</th>
                                 <th>Date Description</th>
                                 <th>Meta data</th>
@@ -87,11 +92,8 @@ const Portal = (props) => {
         </TabPanel>
         <TabPanel>
         </TabPanel>
-    </Tabs>
-    </div>
-            </div>   
+    </Tabs>   
         </main>
     )
 }
-
 export default Portal

@@ -2,7 +2,7 @@ import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Main.css'
-
+import SplineChart from '../components/Pages/graph/spline'
 
 
 const TotalViews = (props) => {
@@ -26,6 +26,7 @@ const TotalViews = (props) => {
             {/* <LineChart width={400} height={400} data={data}>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
             </LineChart> */}
+            <SplineChart />
         </div>
 
     </div>
@@ -35,16 +36,19 @@ const TotalViews = (props) => {
 
 const Details = [
      {
-        id:1, Title: 'Total Page Views', value: '23,568', details: 'Vs previous days 7 (28,211)'
+        id:1, Title: 'Total Page Views', value: '23,568', details: 'Vs previous days 7 (28,211)', type: 'analytics'
     },
     {
-        id:2, Title: 'Total Page Views', value: '13,568', details: 'Vs previous days 7 (28,211)'
+        id:2, Title: 'Total Page Views', value: '13,568', details: 'Vs previous days 7 (28,211)', type: 'general'
     },
     {
-        id:3, Title: 'Total Page Views', value: '23,568', details: 'Vs previous days 7 (28,211)'
+        id:3, Title: 'Total Page Views', value: '23,568', details: 'Vs previous days 7 (28,211)', type: 'analytics'
     }
 ]
 
+
+const analytics  = Details.filter(val => val.type === 'analytics')
+const general  = Details.filter(val => val.type === 'general') 
 // const filteredDetails = Details.filter( value=> {
 //     return value > 20000
 // })
@@ -99,9 +103,22 @@ const Main = (props) => {    return (
                             </div>
                             </TabPanel>
                             <TabPanel>
-                                <TotalViews
-                                
-                                />
+                            <div className='container-fluid'>
+                                <div className='row mt-5'>                                    
+                                    {analytics.map((Detail) =>
+                                    <TotalViews key={Detail.id} Title={Detail.Title} value={Detail.value} details={Detail.details} />
+                                    )}                                    
+                                </div>
+                            </div>
+                            </TabPanel>
+                            <TabPanel>
+                            <div className='container-fluid'>
+                                <div className='row mt-5'>                                    
+                                    {general.map((Detail) =>
+                                    <TotalViews key={Detail.id} Title={Detail.Title} value={Detail.value} details={Detail.details} />
+                                    )}                                    
+                                </div>
+                            </div>
                             </TabPanel>
                         </Tabs>
                     </div>
