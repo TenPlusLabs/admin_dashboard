@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import { Form} from './Form';
+import { ActualForms, FeatureForms, Form, PlanForms} from './Form';
 
 const style = {
   position: 'absolute',
@@ -34,13 +34,6 @@ export function  ProductCatalogue(prop) {
       >
         <Box sx={style}>
            <Form />
-
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         </Box>
       </Modal>
     </div>
@@ -48,31 +41,101 @@ export function  ProductCatalogue(prop) {
 }
 
 
-// export function EditModal(prop) {
-//   const [openEdit, setEditOpen] = React.useState(false);
-//   const handleOpen = () => setEditOpen(true);
-//   const handleClose = () => setEditOpen(false);
+export function EditModal(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
 
-//   return (
-//     <>
-//       <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
-//       <Modal
-//         open={openEdit}
-//         onClose={handleClose}
-//         aria-labelledby="modal-modal-title"
-//         aria-describedby="modal-modal-description"
-//       >
-//         <Box sx={style}>
-//            <EditForm />
+  return (
+    <>
+      <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
+      {/* <span className='text-secondary mt-3 mr-3'>Edit</span> */}
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography>
+              <PlanProduct onClick={handleClose}/>
+              &nbsp;&nbsp;
+              <FeatureProduct onClick={handleClose}/>
+              &nbsp;&nbsp;
+              <ActualProduct onClick={handleClose}/>
+          </Typography>
+        </Box>
+      </Modal>
+    </>
+  );
+}
 
-//           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-//             Text in a modal
-//           </Typography>
-//           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-//             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-//           </Typography> */}
-//         </Box>
-//       </Modal>
-//     </>
-//   );
-// }
+
+export function ActualProduct(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
+
+  return (
+    <>
+      {/* <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span> */}
+      <button className='btn btn-secondary' onClick={handleOpen}>Plan Product</button>
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <ActualForms />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+export function FeatureProduct(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
+
+  return (
+    <>
+      {/* <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span> */}
+      <button className='btn btn-secondary' onClick={handleOpen}>Feature Product</button>
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+         <FeatureForms />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+export function PlanProduct(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
+
+  return (
+    <>
+      {/* <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span> */}
+      <button className='btn btn-secondary' onClick={handleOpen}>Plan Product</button>
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <PlanForms />
+        </Box>
+      </Modal>
+    </>
+  );
+}

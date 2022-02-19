@@ -1,9 +1,7 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from '../Pages/Modal';
-
-
+import AddRatingModal from './Modal';
 
 const Rows = [
     {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
@@ -48,16 +46,16 @@ const RatingReview = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-left mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
-                <Tab><button className='btn'>Published(0)</button></Tab>
-                <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
+                {/* <Tab><button className='btn active'>All(3)</button></Tab> */}
+                <Tab><button className='btn'>Projects(0)</button></Tab>
+                <Tab><button className='btn active'>Posts(3)</button></Tab>
+                {/* <Tab><button className='btn'>Bin(0)</button></Tab> */}
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
-            <div className='margin'> <BasicModal /> </div>
+            {/* <div className='margin'> <AddRatingModal /> </div> */}
         </div>
             <TabPanel>
                 
@@ -90,6 +88,29 @@ const RatingReview = (props) => {
             
         </TabPanel>
         <TabPanel>
+                
+                <div className='col-12'>
+                <table className=' bg-light p-5 shadow text-blue table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Review Value</th>
+                            <th>Review Description</th>
+                            <th>Average Total Reviews</th>
+                            <th>Post Title</th>
+                            <th>Post Category</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Phone No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {Rows.map((Row) =>
+                <Table key={Row.id} id={Row.id} page_title={Row.page_title} date_published={Row.date_published} date_description={Row.date_description} meta_data={Row.meta_data} page_url={Row.page_url} visit_day={Row.visit_day} visit_today={Row.visit_today} visit_month={Row.visit_month} />
+                )} 
+                    </tbody>
+                </table>
+                </div>
         </TabPanel>
     </Tabs>
     </div>

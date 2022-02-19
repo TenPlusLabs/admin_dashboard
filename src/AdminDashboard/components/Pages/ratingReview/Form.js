@@ -10,19 +10,19 @@ export default function Form() {
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="text" placeholder="Review Value" alt="TenPlus" id="img" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
+                        <input type="text" id="review_description" class="form-control" placeholder="Review Description" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
+                        <input type="text" id="average_total_reviews" class="form-control" placeholder="Average Total Reviews" />
                         </div>
                     </div>
                     <div class="col">

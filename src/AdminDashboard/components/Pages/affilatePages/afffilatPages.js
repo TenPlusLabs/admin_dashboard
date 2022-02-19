@@ -1,7 +1,8 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import './Pages.css'
-import BasicModal from './Modal';
+import BasicModal,{EditModal } from './Modal';
+import Navbar from '../../Navbar/Navbar';
 
 
 
@@ -16,11 +17,6 @@ const Rows = [
 
 const Table = (props) =>{
     const {id, page_title,page_url,date_published,date_description,meta_data, visit_today, visit_day, visit_month  }  = props;
-   
-    // const [openModal, setOpenModal] = useState('');
-    // const handleShow = () => {
-    //     return <BasicModal />
-    //   };
 
     return(        
 
@@ -28,7 +24,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                    <EditModal />
+                    <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -45,10 +42,15 @@ const AffilatePages = (props) => {
    
     return (
         <main>
+        <Navbar pg_name='Affilate / Pages'/>
         <div className='container-fluid mt-5'>
-                <div className='row ml-5 '>
+                <div className='row ml-5'>
+    
+                </div>
+        </div>  
+
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
+        <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
                 <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
@@ -87,9 +89,7 @@ const AffilatePages = (props) => {
         </TabPanel>
         <TabPanel>
         </TabPanel>
-    </Tabs>
-    </div>
-            </div>   
+    </Tabs>   
         </main>
     )
 }

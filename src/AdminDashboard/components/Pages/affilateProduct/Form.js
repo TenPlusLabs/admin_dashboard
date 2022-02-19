@@ -3,7 +3,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { Button } from '@mui/material';
 import { Update } from '@mui/icons-material';
 
-export default function Form() {
+export function Form() {
     return (
         <div>
             <form class="form" action="">

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import Form, { EditForm } from './Form';
+import { Form} from './Form';
 
 const style = {
   position: 'absolute',
@@ -17,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal(prop) {
+export function  ProductCatalogue(prop) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -33,29 +34,6 @@ export default function BasicModal(prop) {
       >
         <Box sx={style}>
            <Form />
-        </Box>
-      </Modal>
-    </div>
-  );
-}
-
-
-export function EditModal(prop) {
-  const [openEdit, setEditOpen] = React.useState(false);
-  const handleOpen = () => setEditOpen(true);
-  const handleClose = () => setEditOpen(false);
-
-  return (
-    <>
-      <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
-      <Modal
-        open={openEdit}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-           <EditForm />
 
           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
@@ -65,6 +43,36 @@ export function EditModal(prop) {
           </Typography> */}
         </Box>
       </Modal>
-    </>
+    </div>
   );
 }
+
+
+// export function EditModal(prop) {
+//   const [openEdit, setEditOpen] = React.useState(false);
+//   const handleOpen = () => setEditOpen(true);
+//   const handleClose = () => setEditOpen(false);
+
+//   return (
+//     <>
+//       <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
+//       <Modal
+//         open={openEdit}
+//         onClose={handleClose}
+//         aria-labelledby="modal-modal-title"
+//         aria-describedby="modal-modal-description"
+//       >
+//         <Box sx={style}>
+//            <EditForm />
+
+//           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
+//             Text in a modal
+//           </Typography>
+//           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+//             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+//           </Typography> */}
+//         </Box>
+//       </Modal>
+//     </>
+//   );
+// }

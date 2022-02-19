@@ -292,7 +292,7 @@ tr td:last-child{
   background-color: orangered;
 }
 .table-responsive{
-  width: 90%;
+  /* width: 90%; */
   overflow-x: auto;
   box-sizing: border-box;
 }

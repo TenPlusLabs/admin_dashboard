@@ -9,7 +9,6 @@ import Pages from './Pages/Pages'
 import Portal from './Portal/portal'
 import Media from './Media/Media'
 import Comment from './Comment/Comment'
-
 import Post from './Post/Post'
 import Customer from './Customer/Customer'
 import { Route, Routes } from 'react-router-dom'
@@ -45,8 +44,16 @@ import MediaEdit from './Media/mediaEdit'
 import CommentEdit from './Comment/ReplyComments'
 import ProductFixedView, { ProductSubView } from './products/productView'
 import Programs from './programs/programs'
-// import { Portal } from '@mui/material'
-// import Sidebar1 from '../Sidebar1'
+import EcommercePayment from './EcommercePayment/Payment'
+import DisputesPayments from './DisputesPayment/Payment'
+import PortalApplication from './application/application'
+import DisputesPortalPayments from './paymentPortal/disputpaymentPortal'
+import AffilateProductCatalogue from './affilateProduct/AffilateProductCatalogue'
+import AffilateProductView from './affilateProduct/productView'
+import AffilateActiveProduct from './affilateProduct/affilateActiveProduct'
+import AffilateSuspendedProduct from './affilateProduct/affilateSuspendedProduct'
+import DefineUserRole from './defineRole/defineRole'
+import ViewProject from './c_projects/viewProject'
 
 const Homepage = () => {
     return (
@@ -97,7 +104,17 @@ const Homepage = () => {
                     <Route path='/product/productFixedView' element={<ProductFixedView />} />
                     <Route path='/product/productSubView' element={<ProductSubView />} />
                     <Route path='/programs' element={<Programs />}  />
-                </Routes>
+                    <Route path='EcommercePayment' element={<EcommercePayment />} />
+                    <Route path='/DisputePayment' element={<DisputesPayments />} />
+                    <Route path='/application' element={<PortalApplication />} />
+                    <Route path='/DisputePortalPayment' element={<DisputesPortalPayments />} />
+                    <Route path='/AffilateProductCatalogue' element={<AffilateProductCatalogue />} />
+                    <Route path='/Affilateproduct/productView' element={<AffilateProductView />} />
+                    <Route path='/AffilateActiveProduct' element={<AffilateActiveProduct />} />
+                    <Route path='/AffilateSuspendedProduct' element={<AffilateSuspendedProduct />} />
+                    <Route path='/defineUserRole' element={<DefineUserRole />} />
+                    <Route path='/view_project' element={<ViewProject />} />
+                </Routes>  
             </div>
          </div>
     )

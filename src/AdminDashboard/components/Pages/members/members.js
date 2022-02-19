@@ -1,6 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
+import ActiveLinkModal, { SuspendedLinkModal } from './Modal';
 // import BasicModal from './Modal';
 
 
@@ -42,8 +43,8 @@ const Table = (props) =>{
             <td>{visit_today}</td>
             <td>{visit_day}</td>
             <td>{visit_month}</td>
-            <td><span className='rounded bg-success p-2 text-white'>Links</span></td>
-            <td><span className='rounded bg-secondary p-2 text-white'>Links</span></td>
+            <td><ActiveLinkModal /></td>
+            <td><SuspendedLinkModal /></td>
             <td>{total_earning}</td>
             <td>{top_pp}</td>
         </tr>
@@ -68,8 +69,8 @@ const Members = (props) => {
         </div>
             <TabPanel>
                 
-                    <div className='col-12'>
-                    <table className=' bg-light p-5 shadow text-blue table-responsive'>
+                    <div className='col-12' style={{width: '100%',overflow:'auto'}}>
+                    <table className=' bg-light p-5 shadow text-blue table-responsive'style={{width: '113rem'}}>
                         <thead>
                             <tr>
                                 <th>First Name</th>
@@ -109,8 +110,8 @@ for that user */}
 
         <TabPanel>
                 
-                <div className='col-12'>
-                <table className=' bg-light p-5 shadow text-blue table-responsive'>
+                    <div className='col-12' style={{width: '100%',overflow:'auto'}}>
+                    <table className=' bg-light p-5 shadow text-blue table-responsive'style={{width: '113rem'}}>
                     <thead>
                         <tr>
                             <th>First Name</th>
@@ -140,8 +141,8 @@ for that user */}
 
     <TabPanel>
                 
-                    <div className='col-12'>
-                    <table className=' bg-light p-5 shadow text-blue table-responsive'>
+                    <div className='col-12' style={{width: '100%',overflow:'auto'}}>
+                    <table className=' bg-light p-5 shadow text-blue table-responsive'style={{width: '113rem'}}>
                         <thead>
                             <tr>
                                 <th>First Name</th>

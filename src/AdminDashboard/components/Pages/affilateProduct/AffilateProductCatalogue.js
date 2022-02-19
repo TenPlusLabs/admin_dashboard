@@ -1,8 +1,8 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { Link } from 'react-router-dom';
-import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import { TabList, TabPanel, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import {EditModal, ProductCatalogue} from './Modal';
+import {ProductCatalogue} from './Modal';
 
 
 
@@ -29,8 +29,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <EditModal />
-                <span className='text-primary mt-3 mr-3'><Link to={`/product/productView?prod=${id}`}>View</Link></span>
+                <span className='text-secondary mt-3 mr-3'>Edit</span>
+                <span className='text-primary mt-3 mr-3'><Link to={`/Affilateproduct/productView?prod=${id}`}>View</Link></span>
                 <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
@@ -46,22 +46,14 @@ const Table = (props) =>{
         </tr>
     )
     }
-const ProductCat = (props) => {
+const AffilateProductCatalogue = (props) => {
    
     return (
         <main>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-between mb-3'>
-            <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                {/* <Tab><button className='btn active'>All({Rows.length})</button></Tab> */}
-                {/* <Tab><button className='btn'>Rroduct Catalogue</button></Tab>
-                <Tab><button className='btn active'>Suspended Product</button></Tab>
-                <Tab><button className='btn'>Active Product</button></Tab> */}
-                {/* <Tab><BasicModal /></Tab> */}
-                {/* <BasicModal /> */}
-            </TabList>
+        <div className='d-flex justify-content-around mb-3'>
             <div className='margin'> <ProductCatalogue /> </div>
         </div>
             <TabPanel>
@@ -101,4 +93,4 @@ const ProductCat = (props) => {
     )
 }
 
-export default ProductCat
+export default AffilateProductCatalogue

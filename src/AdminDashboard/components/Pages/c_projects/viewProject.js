@@ -1,9 +1,10 @@
-import React from 'react' 
-import { Link } from 'react-router-dom';
+import React from 'react'
 import { TabList, TabPanel, Tabs } from 'react-tabs';
 import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import BasicModal,{EditOrderModal } from './Modal';
+import BasicModal from './Modal';
+
+
 
 
 
@@ -18,23 +19,11 @@ const Rows = [
 
 const Table = (props) =>{
     const {id, page_title,page_url,date_published,milestone,date_description,status,classColor,meta_data, visit_today, visit_day, visit_month  }  = props;
-   
-    // const [openModal, setOpenModal] = useState('');
-    // const handleShow = () => {
-    //     return <BasicModal />
-    //   };
 
     return(        
 
         <tr>
             <td>{id}</td>
-            <td className='page_title' > {page_title}
-                <div className='d-flex display-none'>
-                <EditOrderModal />
-                <span className='text-primary mt-3 mr-3'><Link to={`/view_project?project=order&id=${id}`}>View</Link></span>
-                <span className='text-danger mt-3'>Delete</span>
-                </div>
-             </td>
             <td>{page_url}</td>
             <td>{date_published}</td>
             <td>{date_description}</td>
@@ -53,10 +42,11 @@ const Table = (props) =>{
         </tr>
     )
     }
-const ProjectOrder = (props) => {
-   
-    return (
-        <main>
+
+function ViewProject() {
+  return (
+    <div>
+       <main>
         <Navbar pg_name='Project / Order' />
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
@@ -64,7 +54,6 @@ const ProjectOrder = (props) => {
         <div className='d-flex justify-content-center mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
             </TabList>
-            <div className='margin'> <BasicModal /> </div>
         </div>
             <TabPanel>
                 
@@ -124,7 +113,8 @@ const ProjectOrder = (props) => {
     </div>
             </div>   
         </main>
-    )
+    </div>
+  )
 }
 
-export default ProjectOrder
+export default ViewProject

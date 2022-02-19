@@ -2,7 +2,61 @@ import React from 'react'
 import SendIcon from '@mui/icons-material/Send';
 import { Button } from '@mui/material';
 
-function Form() {
+export default function NewRoleForm() {
+    return (
+        <div>
+            <form class="form" action="">
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="role_name" class="form-control" placeholder="Name Of Role" />
+                        </div>
+                    </div>
+                    </div>
+                            <div>
+                                <hr/>
+                                    Role Accesses
+                                <hr/>
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 1
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 2
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 3
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 4
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 5
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 6
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 7
+                                </label>
+
+                                <label className='form-control p-2'>
+                                    <input type='checkbox' />Acccess 8
+                                </label>
+                            </div>
+                    <Button className=""  variant="outlined"  startIcon={<SendIcon />}>Add New</Button>
+            </form>
+        </div>
+    )
+}
+
+
+export function EditUserForm() {
     return (
         <div>
             <form class="form" action="">
@@ -69,4 +123,3 @@ function Form() {
     )
 }
 
-export default Form

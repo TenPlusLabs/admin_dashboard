@@ -1,5 +1,6 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import BasicModal from './Modal';
 
@@ -16,11 +17,6 @@ const Rows = [
 
 const Table = (props) =>{
     const {id, page_title,page_url,date_published,date_description,meta_data, visit_today, visit_day, visit_month  }  = props;
-   
-    // const [openModal, setOpenModal] = useState('');
-    // const handleShow = () => {
-    //     return <BasicModal />
-    //   };
 
     return(        
 
@@ -40,11 +36,12 @@ const Table = (props) =>{
             <td>{visit_month}</td>
         </tr>
     )
-    }
+}
 const User = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Users'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
@@ -54,18 +51,16 @@ const User = (props) => {
                 <Tab><button className='btn'>Published(0)</button></Tab>
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
                 <Tab><button className='btn'>Bin(0)</button></Tab>
-                {/* <Tab><BasicModal /></Tab> */}
-                {/* <BasicModal /> */}
             </TabList>
             <div className='margin'> <BasicModal /> </div>
         </div>
             <TabPanel>
                 
-                    <div className='col-12'>
-                    <table className=' bg-light p-5 shadow text-blue table-responsive'>
+                    <div className='col-12' style={{width: '100%',overflow:'auto'}}>
+                    <table className=' bg-light p-5 shadow text-blue table-responsive'style={{maxWidth: '113rem',Width:'800px'}}>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                            <th>ID</th>
                                 <th>Frst Name</th>
                                 <th>Last Name</th>
                                 <th>Role</th>

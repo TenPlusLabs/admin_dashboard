@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [side_opens, setSideOpens] = useState(false)
-
+    const {pg_name} = props;
     const side_open = ()=>{
         if(side_opens === false){
             // document.getElementsByClassName("main-content").innerF = "25%";
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <label for="nav-toggle">
                     <span class="las la-bars"></span>
                 </label>
-                Dashboard
+                {pg_name ? `${pg_name}` : 'Dashboard' }
             </h2>
             
             <div className="user-wrapper">

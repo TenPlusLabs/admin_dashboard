@@ -29,46 +29,28 @@ const Table = (props) =>{
             <td>{page_title}</td>
             <td className='page_title'> 
                 {date_published}
-                <div className='d-flex display-none'>
-                    <ChangeProgramApplicable />
-                </div>
              </td>
              <td className='page_title'> 
                 {visit_today} 
-                <div className='d-flex display-none'>
-                    <CouponUsageEdit />
-                </div>
              </td>
              <td className='page_title'> 
                 {page_url}
-                <div className='d-flex display-none'>
-                    <ChangeProgramSubCat />
-                </div>
              </td>
              <td>{coupon_number}</td>
             <td>{status}</td>
             <td className='page_title'> 
                 {exp_date}
-                <div className='d-flex display-none'>
-                    <ChangeProgramExpDate />
-                </div>
              </td>
             <td className='page_title'> 
                 {visit_day} 
-                <div className='d-flex display-none'>
-                <UserApplicable />
-                </div>
              </td>
             <td className='page_title'> 
                 {visit_today} 
-                <div className='d-flex display-none'>
-                <CustomerUsageViewAll />
-                </div>
              </td>
         </tr>
     )
     }
-const Coupons = (props) => {
+const PortalApplication = (props) => {
    
     return (
         <main>
@@ -77,10 +59,10 @@ const Coupons = (props) => {
     <Tabs>
         <div className='d-flex justify-content-around mb-3'>
             <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
+                {/* <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
+                <Tab><button className='btn'>Bin(0)</button></Tab> */}
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
@@ -122,4 +104,4 @@ const Coupons = (props) => {
     )
 }
 
-export default Coupons
+export default PortalApplication

@@ -1,6 +1,7 @@
 import React from 'react' 
 import { NavLink } from 'react-router-dom';
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 
 import {PostModal,PostSetting } from './modal';
 // import '../Pages/Pages.css'
@@ -59,6 +60,7 @@ const Post = (props) => {
    
     return (
         <main >
+            <Navbar pg_name='Post'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5'>
     <Tabs>

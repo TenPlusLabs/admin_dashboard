@@ -1,34 +1,31 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import Form from './Form';
-import { Edit } from '@mui/icons-material';
+import SubFormView from './Form';
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  minWidth: '400',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
 
-function BasicModal(prop) {
+
+export function SubViewModal(prop) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>Add New</Button>
-      &nbsp;&nbsp;
-      <a href='defineUserRole'><Button className="mt-4"  variant="outlined"  startIcon={<Edit/>}>Define Roles</Button></a>
+      <span className='d-flex'>
+          <span className='text-primary mt-3 mr-3' onClick={handleOpen}>View</span>
+     </span>
       <Modal
         open={open}
         onClose={handleClose}
@@ -36,11 +33,11 @@ function BasicModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-           <Form />
+          <SubFormView />
         </Box>
       </Modal>
     </div>
   );
 }
 
-export default BasicModal
+

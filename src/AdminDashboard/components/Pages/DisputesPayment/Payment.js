@@ -1,7 +1,7 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import UserApplicable, { AddNewCoupon, ChangeProgramApplicable, ChangeProgramExpDate, ChangeProgramSubCat, CouponUsageEdit, CustomerUsageViewAll } from './Modal';
+import { AddNewPayment } from './Modal';
 
 
 
@@ -16,11 +16,6 @@ const Rows = [
 
 const Table = (props) =>{
     const {id, page_title,page_url,date_published,status,exp_date, visit_today, visit_day, coupon_number  }  = props;
-   
-    // const [openModal, setOpenModal] = useState('');
-    // const handleShow = () => {
-    //     return <BasicModal />
-    //   };
 
     return(        
 
@@ -29,62 +24,38 @@ const Table = (props) =>{
             <td>{page_title}</td>
             <td className='page_title'> 
                 {date_published}
-                <div className='d-flex display-none'>
-                    <ChangeProgramApplicable />
-                </div>
              </td>
              <td className='page_title'> 
                 {visit_today} 
-                <div className='d-flex display-none'>
-                    <CouponUsageEdit />
-                </div>
              </td>
              <td className='page_title'> 
                 {page_url}
-                <div className='d-flex display-none'>
-                    <ChangeProgramSubCat />
-                </div>
              </td>
              <td>{coupon_number}</td>
             <td>{status}</td>
             <td className='page_title'> 
                 {exp_date}
-                <div className='d-flex display-none'>
-                    <ChangeProgramExpDate />
-                </div>
              </td>
             <td className='page_title'> 
                 {visit_day} 
-                <div className='d-flex display-none'>
-                <UserApplicable />
-                </div>
              </td>
-            <td className='page_title'> 
-                {visit_today} 
-                <div className='d-flex display-none'>
-                <CustomerUsageViewAll />
+            <td className='page_title  cusuor-pointer'> 
+                <div className='d-flex'>
+                {/* <EcommercePaymentModal /> */}
                 </div>
              </td>
         </tr>
     )
     }
-const Coupons = (props) => {
+const DisputesPayments = (props) => {
    
     return (
         <main>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-around mb-3'>
-            <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
-                <Tab><button className='btn'>Published(0)</button></Tab>
-                <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
-                {/* <Tab><BasicModal /></Tab> */}
-                {/* <BasicModal /> */}
-            </TabList>
-            <div className='margin'> <AddNewCoupon /> </div>
+        <div className='d-flex justify-content-right mb-3'>
+            <div className='margin'> <AddNewPayment /> </div>
         </div>
             <TabPanel>
                 
@@ -93,15 +64,14 @@ const Coupons = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Coupon Name</th>
-                                <th>Program Applicable</th>
-                                <th>Coupon Number Of Usage</th>
-                                <th>Program Sub Category Name</th>
-                                <th>Cupon Number</th>
+                                <th>Program Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 <th>Status</th>
-                                <th>Coupon Expiry Date</th>
-                                <th>Users Applicable</th>
-                                <th>Customers Usage </th>
+                                <th>Total Payments(#2000)</th>
+                                <th>Total Applicants(30)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,8 +83,6 @@ const Coupons = (props) => {
                     </div>
             
         </TabPanel>
-        <TabPanel>
-        </TabPanel>
     </Tabs>
     </div>
             </div>   
@@ -122,4 +90,4 @@ const Coupons = (props) => {
     )
 }
 
-export default Coupons
+export default DisputesPayments

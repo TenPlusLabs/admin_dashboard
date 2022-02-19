@@ -10,36 +10,60 @@ export default function Form() {
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="text" src="#" placeholder="First Name" id="first_name" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="desc" class="form-control" placeholder="Page Description" />
+                        <input type="text" id="last_name" class="form-control" placeholder="Last Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="key" class="form-control" placeholder="Keyword" />
+                        <input type="text" id="email" class="form-control" placeholder="Email" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="meta" class="form-control" placeholder="Meta-Data" />
+                        <input type="text" id="phone_number" class="form-control" placeholder="Phone Number" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="website" class="form-control" placeholder="Website" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="facebook" class="form-control" placeholder="Facebook" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="price" class="form-control" placeholder="Price" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="instagram" class="form-control" placeholder="Instagram" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="price" class="form-control" placeholder="Company" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="instagram" class="form-control" placeholder="Education" />
                         </div>
                     </div>
                 </div>
@@ -57,95 +81,68 @@ export function EditForm() {
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="text" src="#" placeholder="First Name" id="first_name" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
+                        <input type="text" id="last_name" class="form-control" placeholder="Last Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
+                        <input type="text" id="email" class="form-control" placeholder="Email" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="desc" class="form-control" placeholder="Page Description" />
+                        <input type="text" id="phone_number" class="form-control" placeholder="Phone Number" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="key" class="form-control" placeholder="Keyword" />
+                        <input type="text" id="website" class="form-control" placeholder="Website" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="meta" class="form-control" placeholder="Meta-Data" />
-                        </div>
-                    </div>
-                </div>
-               <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="facebook_url" class="form-control" placeholder="Facebook URL" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="facebook_image" class="form-control" placeholder="Facebook Image" />
+                        <input type="text" id="facebook" class="form-control" placeholder="Facebook" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="facebook_meta_description" class="form-control" placeholder="Facebook Meta Description" />
+                        <input type="text" id="price" class="form-control" placeholder="Price" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="instagram_url" class="form-control" placeholder="Instagram URL" />
+                        <input type="text" id="instagram" class="form-control" placeholder="Instagram" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="instagram_image" class="form-control" placeholder="Instagram Image" />
+                        <input type="text" id="price" class="form-control" placeholder="Company" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="instagram_meta_description" class="form-control" placeholder="Instagram Meta Description" />
+                        <input type="text" id="instagram" class="form-control" placeholder="Education" />
                         </div>
                     </div>
                 </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="twitter_url" class="form-control" placeholder="Twitter URL" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="twitter_image" class="form-control" placeholder="Twitter Image" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="twitter_meta_description" class="form-control" placeholder="Twitter Meta Description" />
-                        </div>
-                    </div>
+                <div class='row mb-4'>
                     <div class="col">
                     <Button className="form-control"  variant="outlined"  startIcon={<Update />}>Update</Button>
+                    </div>
+                    <div class="col">
                     </div>
                 </div>
                 
