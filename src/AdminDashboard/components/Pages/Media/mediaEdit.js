@@ -1,9 +1,9 @@
-import React,{ useState } from 'react'
+import React from 'react'
 import img from '../../../../assets/lana.jpg'
-import BasicModal from '../Pages/Modal';
 import "./Media.css"
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import { Close } from '@mui/icons-material';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -53,6 +53,7 @@ const MediaEdit = () => {
                         aria-describedby="modal-modal-description"
                     >
                          <Box sx={style}>
+                         <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
                                 <div className='d-flex'>
                                     <img src={img} className='img-fluid media-img' alt=''style={{width:'60%'}} />
                                     <fieldset style={{width:'40%',paddingTop:'13px'}}>

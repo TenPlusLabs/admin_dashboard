@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import Form from './Form';
-import { Edit } from '@mui/icons-material';
+import { Close, Edit } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -36,6 +36,7 @@ function BasicModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <Form />
         </Box>
       </Modal>

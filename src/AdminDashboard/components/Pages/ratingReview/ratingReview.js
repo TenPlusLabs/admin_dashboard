@@ -1,7 +1,7 @@
 import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import AddRatingModal from './Modal';
 
 const Rows = [
     {id:1, page_title:'TenPlus Labs', page_url:'AJAPswenky', date_published:'05-01-2021', date_description:'0', meta_data:'2021/05/05', visit_day:'0', visit_today:'5', visit_month:'2' },
@@ -43,6 +43,7 @@ const RatingReview = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Rating And Reviews' />
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

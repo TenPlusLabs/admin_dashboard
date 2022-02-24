@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import { ActualForms, FeatureForms, Form, PlanForms} from './Form';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -33,6 +34,7 @@ export function  ProductCatalogue(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <Form />
         </Box>
       </Modal>
@@ -57,6 +59,7 @@ export function EditModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <Typography>
               <PlanProduct onClick={handleClose}/>
               &nbsp;&nbsp;
@@ -87,6 +90,7 @@ export function ActualProduct(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <ActualForms />
         </Box>
       </Modal>
@@ -110,6 +114,7 @@ export function FeatureProduct(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
          <FeatureForms />
         </Box>
       </Modal>
@@ -133,6 +138,7 @@ export function PlanProduct(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <PlanForms />
         </Box>
       </Modal>

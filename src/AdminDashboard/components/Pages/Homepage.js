@@ -60,7 +60,7 @@ const Homepage = () => {
         <div>
             <Sidebar/>
             <div className='main-content' id='main-content'>
-                <Navbar/>
+                {/* <Navbar/> */}
                 <Routes>
                     <Route exact path='/' element={<Main/>} />
                     <Route exact path='pages' element={<Pages/>}/>

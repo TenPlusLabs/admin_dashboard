@@ -1,10 +1,11 @@
-import React,{ useState } from 'react'
+import React from 'react'
 import img from '../../../../assets/lana.jpg'
-import BasicModal from '../Pages/Modal';
 import "./Media.css"
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
+import Navbar from '../../Navbar/Navbar';
+import { Close } from '@mui/icons-material';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -25,6 +26,7 @@ const Media = () => {
 
  return (
         <main>
+            <Navbar pg_name='Media'/>
             <div className='container-fluid mt-5'>
                 {/*media Libary
                 goes here*/}
@@ -33,7 +35,9 @@ const Media = () => {
                     <h2 className='ml-5'>Media Libary</h2>
                     <div className='col-12 mb-5'>
                         <div className='float-right d-flex'>
-                            <button className='btn btn-primary mr-3'>Upload</button>
+                            <label for='upload_img' className='btn btn-primary'>Upload</label>
+                            &nbsp;&nbsp;
+                            <input type='file' className='btn btn-primary mr-3 display-none' id='upload_img'/>
                             <NavLink to='MediaEdit'>
                                 <button className='btn btn-primary'>Edit Image</button>
                             </NavLink>
@@ -56,6 +60,7 @@ const Media = () => {
                         aria-describedby="modal-modal-description"
                     >
                          <Box sx={style}>
+                         <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
                              <div className='d-flex'>
                                 <img src={img} className='img-fluid media-img' alt=''style={{width:'60%'}} />
                                 <fieldset style={{width:'40%',paddingTop:'13px'}}>

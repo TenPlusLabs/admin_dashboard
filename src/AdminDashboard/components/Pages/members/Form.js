@@ -1,36 +1,50 @@
 import React from 'react'
-import SendIcon from '@mui/icons-material/Send';
 import { Button } from '@mui/material';
+import { Update } from '@mui/icons-material';
 
-export function Form() {
+export function EditForm() {
     return (
-        <div>
+        <div>      
+            <h3>Update Member</h3>   
+            <hr />                       
             <form class="form" action="">
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" src="#" placeholder='First Name' id="f_name" class="form-control" />
+                        <input type="text" src="#" placeholder="First Name" id="fname" className="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="l_name" class="form-control" placeholder="Last Name" />
+                        <input type="text" id="lname" class="form-control" placeholder="Last Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="email" class="form-control" placeholder="Email" />
+                        <input type="email" id="email" class="form-control" placeholder="Email" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="phone" class="form-control" placeholder="Phone Number" />
+                        <input type="tel" id="phone" class="form-control" placeholder="Phone Number" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="website" class="form-control" placeholder="Website" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="facebook" class="form-control" placeholder="Facebook" />
+                        </div>
+                    </div>
+                </div>
+               <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
                         <input type="text" id="company" class="form-control" placeholder="Company" />
@@ -38,86 +52,68 @@ export function Form() {
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="country" class="form-control" placeholder="Country" />
+                        <input type="text" id="education" class="form-control" placeholder="Education" />
+                        </div>
+                    </div>
+                </div>
+                {/* <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="facebook_meta_description" class="form-control" placeholder="Facebook Meta Description" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="instagram_url" class="form-control" placeholder="Instagram URL" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="state" class="form-control" placeholder="State" />
+                        <input type="text" id="instagram_image" class="form-control" placeholder="Instagram Image" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                            <label>
-                                <input type="checkbox" id="auto_gen"/> Automatically Generate Password ?.
-                            </label>
+                        <input type="text" id="instagram_meta_description" class="form-control" placeholder="Instagram Meta Description" />
                         </div>
                     </div>
                 </div>
-                <Button className=""  variant="outlined"  startIcon={<SendIcon />}>Add New</Button>
-            </form>
-        </div>
-    )
-}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="twitter_url" class="form-control" placeholder="Twitter URL" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="twitter_image" class="form-control" placeholder="Twitter Image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="twitter_meta_description" class="form-control" placeholder="Twitter Meta Description" />
+                        </div>
+                    </div>
+                    <div class="col">
+                    <Button className="form-control"  variant="outlined"  startIcon={<Update />}>Update</Button>
+                    </div>
+                </div> */}
 
-export function EditCustomerForm() {
-    return (
-        <div>
-            <form class="form" action="">
                 <div class="row mb-4">
                     <div class="col">
-                        <div class="form-outline">
-                        <input type="text" src="#" placeholder='First Name' id="f_name" class="form-control" />
-                        </div>
+                        <Button className="form-control"  variant="outlined"  startIcon={<Update />}>Update</Button>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="l_name" class="form-control" placeholder="Last Name" />
+                        {/* <input type="text" id="twitter_meta_description" class="form-control" placeholder="Twitter Meta Description" /> */}
                         </div>
                     </div>
                 </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="email" class="form-control" placeholder="Email" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="phone" class="form-control" placeholder="Phone Number" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="company" class="form-control" placeholder="Company" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="country" class="form-control" placeholder="Country" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                        <input type="text" id="state" class="form-control" placeholder="State" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                            <label>
-                                {/* <input type="checkbox" id="auto_gen"/> Automatically Generate Password ?. */}
-                                <input type='text' id='password' placeholder='Password' value='Some Secrete Password'  className='form-control'/>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <Button className=""  variant="outlined"  startIcon={<SendIcon />}>Add New</Button>
+                
             </form>
         </div>
     )

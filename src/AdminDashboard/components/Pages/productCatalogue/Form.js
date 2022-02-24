@@ -57,24 +57,24 @@ export function PlanForms() {
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="file" src="#" placeholder="Image" id="img" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
+                        <input type="text" id="title" class="form-control" placeholder="Form Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
+                        <input type="text" id="url" class="form-control" placeholder="Form URL" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="desc" class="form-control" placeholder="Page Description" />
+                        <input type="text" id="desc" class="form-control" placeholder="Form Description" />
                         </div>
                     </div>
                 </div>
@@ -159,27 +159,27 @@ export function FeatureForms() {
     return (
         <div>
             <form class="form" action="">
-                <div class="row mb-4">
+            <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="file" src="#" placeholder="Image" id="img" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
+                        <input type="text" id="title" class="form-control" placeholder="Form Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
+                        <input type="text" id="url" class="form-control" placeholder="Form URL" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="desc" class="form-control" placeholder="Page Description" />
+                        <input type="text" id="desc" class="form-control" placeholder="Form Description" />
                         </div>
                     </div>
                 </div>
@@ -263,27 +263,27 @@ export function ActualForms() {
     return (
         <div>
             <form class="form" action="">
-                <div class="row mb-4">
+            <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="image" src="#" alt="TenPlus" id="img" class="form-control" />
+                        <input type="file" src="#" placeholder="Image" id="img" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="title" class="form-control" placeholder="Page Title" />
+                        <input type="text" id="title" class="form-control" placeholder="Form Name" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="url" class="form-control" placeholder="Page URL" />
+                        <input type="text" id="url" class="form-control" placeholder="Form URL" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="desc" class="form-control" placeholder="Page Description" />
+                        <input type="text" id="desc" class="form-control" placeholder="Form Description" />
                         </div>
                     </div>
                 </div>
@@ -362,4 +362,5 @@ export function ActualForms() {
         </div>
     )
 }
+
 

@@ -1,5 +1,6 @@
 import React from 'react' 
 import { TabPanel,Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 // import BasicModal from './Modal';
 
@@ -41,6 +42,7 @@ const AffilateSuspendedProduct = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Affilate / Suspended Product'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

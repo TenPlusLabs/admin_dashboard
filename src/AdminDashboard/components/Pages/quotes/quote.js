@@ -1,7 +1,8 @@
 // import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import BasicModal from './Modal';
+import BasicModal, { EditQuoteModal } from './Modal';
 
 
 
@@ -32,7 +33,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <EditQuoteModal />
+                <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
              <td>{p_type}</td>
@@ -50,6 +52,7 @@ const Quote = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Quote' />
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
-import {Form, EditOrderForm, EditNewProjectForm, EditPendingProjectForm } from './Form';
-import { Chat, Edit } from '@mui/icons-material';
+import {Form, EditOrderForm, EditNewProjectForm, EditPendingProjectForm, BillingForm, ShippingForm,AddMilestoneForm, AddTaskForm } from './Form';
+import { Add,  Close,  Edit } from '@mui/icons-material';
+
 
 const style = {
   position: 'absolute',
@@ -25,12 +26,7 @@ export  default function BasicModal(prop) {
 
   return (
     <div>
-      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>Add New</Button>
-      &nbsp;&nbsp;
-      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<Chat />}>Chat</Button>
-      &nbsp;&nbsp;
-      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<Edit />}>Augment Budget</Button>
- 
+      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>Add New</Button> 
       <Modal
         open={open}
         onClose={handleClose}
@@ -38,14 +34,8 @@ export  default function BasicModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <Form />
-
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         </Box>
       </Modal>
     </div>
@@ -59,7 +49,8 @@ export function EditOrderModal(){
 
   return (
     <>
-      <span onClick={handleOpen} className='text-secondary mt-3 mr-3'>Edit</span>
+      {/* <span  className='text-secondary mt-3 mr-3'>Edit</span> */}
+      <Edit onClick={handleOpen} className='cursor-pointer text-secondary'/>
       <Modal
         open={open}
         onClose={handleClose}
@@ -67,6 +58,7 @@ export function EditOrderModal(){
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <EditOrderForm />
         </Box>
       </Modal>
@@ -89,6 +81,7 @@ export function EditNewProjectModal(){
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <EditNewProjectForm />
         </Box>
       </Modal>
@@ -111,6 +104,7 @@ export function EditPendingModal(){
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <EditPendingProjectForm />
         </Box>
       </Modal>
@@ -134,9 +128,114 @@ export function EditOngoingModal(){
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <EditPendingProjectForm />
         </Box>
       </Modal>
     </>
   );
+}
+
+
+
+export function BillingModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <Edit className='mr-4 cursor-pointer' onClick={handleOpen} />
+      {/* <span className='text-secondary mt-3 mr-3'>Edit</span> */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+           <BillingForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+
+
+export function ShippingModal(){
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <Edit className='mr-4 cursor-pointer' onClick={handleOpen} />
+      {/* <span className='text-secondary mt-3 mr-3'>Edit</span> */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+           <ShippingForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
+
+export function AddMilestoneModal(){
+  
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return(
+      <>
+          <span className='btn btn-primary' onClick={handleOpen} style={{float:'right'}}>
+          <Add/> Add New
+          </span>
+          <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+            <AddMilestoneForm />
+          </Box>
+        </Modal>
+      </>
+  )
+}
+
+export function AddTaskModal(){
+  
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return(
+      <>
+          <span className='btn btn-primary' onClick={handleOpen} style={{float:'right'}}>
+          <Add/> Add New
+          </span>
+          <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+            <AddTaskForm />
+          </Box>
+        </Modal>
+      </>
+  )
 }

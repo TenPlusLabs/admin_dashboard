@@ -1,5 +1,5 @@
-import React, {useState} from 'react' 
-import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import React from 'react' 
+import {  TabPanel,  Tabs } from 'react-tabs';
 import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 // import BasicModal from './Modal';

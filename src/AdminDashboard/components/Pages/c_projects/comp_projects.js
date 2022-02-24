@@ -1,5 +1,6 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import BasicModal from './Modal';
 
@@ -54,6 +55,7 @@ const CompProject = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Projects / Completed'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

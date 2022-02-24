@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Main.css'
 import SplineChart from '../components/Pages/graph/spline'
+import DoughnutChart from '../components/Pages/graph/DoughnutChart'
+import Navbar from './Navbar/Navbar';
 
 
 const TotalViews = (props) => {
@@ -27,6 +29,7 @@ const TotalViews = (props) => {
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
             </LineChart> */}
             <SplineChart />
+            <DoughnutChart />
         </div>
 
     </div>
@@ -55,6 +58,7 @@ const general  = Details.filter(val => val.type === 'general')
 
 const Main = (props) => {    return (
         <main>
+            <Navbar pg_name='Dashboard' />
             <div className='container-fluid bg-light mt-4'>
                 <div className='row'>
                     <div className='col-md-12 p-5'>

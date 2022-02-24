@@ -1,7 +1,8 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import ActiveLinkModal, { SuspendedLinkModal } from './Modal';
+import ActiveLinkModal, { EditMembersModal, SuspendedLinkModal,ActiveChannelModal } from './Modal';
 // import BasicModal from './Modal';
 
 
@@ -33,7 +34,7 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <EditMembersModal /><span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -42,9 +43,11 @@ const Table = (props) =>{
             <td>{meta_data}</td> 
             <td>{visit_today}</td>
             <td>{visit_day}</td>
+            <td></td>
             <td>{visit_month}</td>
             <td><ActiveLinkModal /></td>
             <td><SuspendedLinkModal /></td>
+            <ActiveChannelModal />
             <td>{total_earning}</td>
             <td>{top_pp}</td>
         </tr>
@@ -54,6 +57,7 @@ const Members = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Members'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
@@ -73,6 +77,7 @@ const Members = (props) => {
                     <table className=' bg-light p-5 shadow text-blue table-responsive'style={{width: '113rem'}}>
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Email</th>
@@ -84,6 +89,7 @@ const Members = (props) => {
                                 <th>Education</th>
                                 <th>Active Links</th>
                                 <th>Suspended Links</th>
+                                <th>Active Channels</th>
                                 <th>Total earnings</th>
                                 <th>Top Performing Social Platform</th>
 {/*             
@@ -125,6 +131,7 @@ for that user */}
                             <th>Education</th>
                             <th>Active Links</th>
                             <th>Suspended Links</th>
+                            <th>Active Channels</th>
                             <th>Total earnings</th>
                             <th>Top Performing Social Platform</th>
                         </tr>

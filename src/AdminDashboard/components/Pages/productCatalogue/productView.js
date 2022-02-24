@@ -1,9 +1,11 @@
 import React from 'react';
 import './style.css'
 import img from '../../../../assets/lana.jpg'
+import Navbar from '../../Navbar/Navbar';
 function ProductView() {
   return <>
-  <main id="main">    
+  <main id="main">  
+  <Navbar pg_name='Product View'/>  
     {/* <!-- ======= Portfolio Details Section ======= --> */}
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">

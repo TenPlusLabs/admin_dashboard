@@ -1,7 +1,8 @@
-import React, {useState} from 'react' 
+import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import UserApplicable, { AddNewCoupon, ChangeProgramApplicable, ChangeProgramExpDate, ChangeProgramSubCat, CouponUsageEdit, CustomerUsageViewAll } from './Modal';
+import UserApplicable, { AddNewCoupon, ChangeProductApplicable, ChangeProductExpDate, ChangeProductSubCat, CouponUsageEdit, CustomerUsageViewAll } from './Modal';
 
 
 
@@ -30,7 +31,7 @@ const Table = (props) =>{
             <td className='page_title'> 
                 {date_published}
                 <div className='d-flex display-none'>
-                    <ChangeProgramApplicable />
+                    <ChangeProductApplicable />
                 </div>
              </td>
              <td className='page_title'> 
@@ -42,7 +43,7 @@ const Table = (props) =>{
              <td className='page_title'> 
                 {page_url}
                 <div className='d-flex display-none'>
-                    <ChangeProgramSubCat />
+                    <ChangeProductSubCat />
                 </div>
              </td>
              <td>{coupon_number}</td>
@@ -50,7 +51,7 @@ const Table = (props) =>{
             <td className='page_title'> 
                 {exp_date}
                 <div className='d-flex display-none'>
-                    <ChangeProgramExpDate />
+                    <ChangeProductExpDate />
                 </div>
              </td>
             <td className='page_title'> 
@@ -72,6 +73,7 @@ const Coupons = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Coupon'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
@@ -94,15 +96,15 @@ const Coupons = (props) => {
                             <tr>
                                 <th>ID</th>
                                 <th>Coupon Name</th>
-                                <th>Program Applicable</th>
+                                <th>Product Applicable</th>
                                 <th>Coupon Number Of Usage</th>
-                                <th>Program Sub Category Name</th>
+                                <th>Product Sub Category Name</th>
                                 <th>Cupon Number</th>
                                 <th>Status</th>
                                 <th>Coupon Expiry Date</th>
                                 <th>Users Applicable</th>
                                 <th>Customers Usage </th>
-                            </tr>
+                            </tr>   
                         </thead>
                         <tbody>
                         {Rows.map((Row) =>

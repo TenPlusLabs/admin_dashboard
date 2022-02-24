@@ -1,5 +1,6 @@
 import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import { AddNewCoupon, AddNewPayment, EcommercePaymentModal } from './Modal';
 
@@ -21,27 +22,32 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
+            <td>Jhon Doe</td>
+            <td className='page_title'> 
+                {page_url}
+             </td>
             <td>{page_title}</td>
             <td className='page_title'> 
                 {date_published}
              </td>
+             
+             <td>Paypal</td>
+             
              <td className='page_title'> 
-                {visit_today} 
-             </td>
-             <td className='page_title'> 
-                {page_url}
+                {exp_date}
              </td>
              <td>{coupon_number}</td>
             <td>{status}</td>
-            <td className='page_title'> 
-                {exp_date}
-             </td>
+            
             <td className='page_title'> 
                 {visit_day} 
              </td>
-            <td className='page_title  cusuor-pointer'> 
+             <td className='page_title'> 
+                {visit_today} 
+             </td>
+            <td className='page_title  cursor-pointer'> 
                 <div className='d-flex'>
-                <EcommercePaymentModal />
+                <EcommercePaymentModal/>
                 </div>
              </td>
         </tr>
@@ -51,6 +57,7 @@ const EcommercePayment = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Payment / E-commerce'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
@@ -70,14 +77,16 @@ const EcommercePayment = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Program Name</th>
+                                <th>Customer Name</th>
+                                <th>Product Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
+                                <th>Payment Type</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Status</th>
                                 <th>Total Payments(#2000)</th>
-                                <th>Total Applicants(30)</th>
+                                <th>Total Product Sale(30)</th>
                                 <th>View</th>
                             </tr>
                         </thead>

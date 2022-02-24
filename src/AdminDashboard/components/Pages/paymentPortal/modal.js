@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import { DisputePaymentForm, SeeAllTable } from './Form';
+import { Close } from '@mui/icons-material';
 
 
 const style = {
@@ -27,7 +28,7 @@ const style = {
   
     return (
       <>
-        <span className='text-info mt-3 mr-3' onClick={handleOpen}>View</span> 
+        <span className='text-info mt-3 mr-3 cursor-pointer' onClick={handleOpen}>View</span> 
         <Modal
           open={openEdit}
           onClose={handleClose}
@@ -35,6 +36,7 @@ const style = {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
             <SeeAllTable />
           </Box>
         </Modal>
@@ -57,6 +59,7 @@ export function AddNewPayment(prop) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
             <DisputePaymentForm />
           </Box>
         </Modal>

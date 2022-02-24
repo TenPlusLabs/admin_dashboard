@@ -42,6 +42,7 @@ const AffilatePages = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Affilate / Pages'/>
         <Navbar pg_name='Affilate / Pages'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5'>

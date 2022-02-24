@@ -1,5 +1,6 @@
 import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import PortalNewModal, { PortalEditModal } from './Modal';
 
@@ -26,11 +27,8 @@ const Table = (props) =>{
 
         <tr>
             <td>{id}</td>
-            <td className='page_title' style={{width:'150px'}}> {page_title}
-                <div className='d-flex display-none'>
-                <PortalEditModal />
-                <span className='text-danger mt-3'>Delete</span>
-                </div>
+            <td className='page_title' style={{width:'150px'}}> 
+                {page_title}
              </td>
             <td>{page_url}</td>
             <td>{date_published}</td>
@@ -46,6 +44,7 @@ const Portal = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Portal'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5'>
     
@@ -62,7 +61,7 @@ const Portal = (props) => {
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
             </TabList>
-            <div className='margin'> <PortalNewModal /> </div>
+            
         </div>
             <TabPanel>
                 

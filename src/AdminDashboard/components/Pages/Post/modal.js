@@ -6,7 +6,7 @@ import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import Form, { PostSettings } from './Form';
 import { NavLink } from 'react-router-dom';
-import { Settings } from '@mui/icons-material';
+import { Close, Settings } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -17,7 +17,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 2,
 };
 
 export function PostModal(prop) {
@@ -31,29 +31,7 @@ export function PostModal(prop) {
      <NavLink to='/post/NewPost'>
         <Button className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>Add New</Button>
       </NavLink>
-      {/* &nbsp;&nbsp;
-      <Button className="mt-4" onClick={handleOpen}  variant="outlined"  startIcon={<Settings />}>Post Settings</Button> */}
-     </span>
-      {/* <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>
-          <NavLink to='/post/NewPost'>Add New</NavLink>
-      </Button> */}
-      {/* <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-           <PostSettings /> */}
-
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
-        {/* </Box>
-      </Modal> */}
+      </span>
     </div>
   );
 }
@@ -79,6 +57,7 @@ export function PostSetting(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <PostSettings />
 
           {/* <Typography id="modal-modal-title" variant="h6" component="h2">

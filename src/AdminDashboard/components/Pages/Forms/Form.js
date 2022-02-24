@@ -1,8 +1,8 @@
 import React, { useDisclosure} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from '../Pages/Modal';
-import { FormModal, FormViewModal } from './modal';
+import { BasicModal, FormModal, FormViewModal } from './modal';
+import Navbar from '../../Navbar/Navbar';
 // import {
 //     Modal,
 //     ModalOverlay,
@@ -81,6 +81,7 @@ const Form = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Form'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-0'>
     <Tabs>

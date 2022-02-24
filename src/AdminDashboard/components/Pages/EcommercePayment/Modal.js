@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Form, {CouponUsageEditForm, SeeAllTable } from './Form';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -33,6 +34,7 @@ export function AddNewPayment(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <Form />
         </Box>
       </Modal>
@@ -55,6 +57,7 @@ export function EcommercePaymentModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <SeeAllTable />
         </Box>
       </Modal>

@@ -1,5 +1,6 @@
 import React from 'react' 
 import { TabList, TabPanel, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import BasicModal, { EditPendingModal } from './Modal';
 
@@ -56,6 +57,7 @@ const PendingProject = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Projects / Pending'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

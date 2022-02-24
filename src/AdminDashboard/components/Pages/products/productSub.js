@@ -3,6 +3,7 @@ import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
 import BasicModal from '../Pages/Modal';
 import { Link } from 'react-router-dom';
+import Navbar from '../../Navbar/Navbar';
 
 
 
@@ -48,6 +49,7 @@ const ProductSub = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Product Subscription'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

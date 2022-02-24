@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import SubFormView from './Form';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -33,6 +34,7 @@ export function SubViewModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <SubFormView />
         </Box>
       </Modal>

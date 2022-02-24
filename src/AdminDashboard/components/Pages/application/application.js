@@ -1,5 +1,6 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import UserApplicable, { AddNewCoupon, ChangeProgramApplicable, ChangeProgramExpDate, ChangeProgramSubCat, CouponUsageEdit, CustomerUsageViewAll } from './Modal';
 
@@ -53,7 +54,7 @@ const Table = (props) =>{
 const PortalApplication = (props) => {
    
     return (
-        <main>
+        <main><Navbar pg_name='Application'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
@@ -75,13 +76,13 @@ const PortalApplication = (props) => {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Coupon Name</th>
-                                <th>Program Applicable</th>
-                                <th>Coupon Number Of Usage</th>
-                                <th>Program Sub Category Name</th>
+                                <th>Application Name</th>
+                                <th>Application Applicable</th>
+                                <th>Application Number Of Usage</th>
+                                <th>Application Sub Category Name</th>
                                 <th>Cupon Number</th>
                                 <th>Status</th>
-                                <th>Coupon Expiry Date</th>
+                                <th>Application Expiry Date</th>
                                 <th>Users Applicable</th>
                                 <th>Customers Usage </th>
                             </tr>

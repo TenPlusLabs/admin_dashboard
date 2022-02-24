@@ -1,6 +1,7 @@
 import React, {useState} from 'react' 
 import { Link } from 'react-router-dom';
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import {EditModal, ProductCatalogue} from './Modal';
 
@@ -50,6 +51,7 @@ const ProductCat = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Product Catalogue'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

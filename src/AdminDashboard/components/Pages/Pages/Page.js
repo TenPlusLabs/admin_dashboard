@@ -2,6 +2,7 @@ import React from 'react'
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import './Pages.css'
 import BasicModal,{EditModal } from './Modal';
+import Navbar from '../../Navbar/Navbar';
 
 
 
@@ -41,6 +42,7 @@ const Page = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Page'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5'>
     

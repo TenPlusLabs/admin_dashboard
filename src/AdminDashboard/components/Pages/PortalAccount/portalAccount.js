@@ -1,5 +1,6 @@
 import React from 'react' 
 import {  TabPanel, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import BasicModal, {EditPortalAcctModal} from './Modal';
 
@@ -46,6 +47,7 @@ const PortalAcct = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Users Account'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
 import BasicModal from '../Pages/Modal';
+import Navbar from '../../Navbar/Navbar';
 
 
 
@@ -45,6 +46,7 @@ const ProductSelect = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Select Plans'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

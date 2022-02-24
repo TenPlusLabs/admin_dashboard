@@ -1,5 +1,6 @@
 import React from 'react' 
 import {  TabPanel,Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import { AddNewPayment, PortalViewModal } from './modal';
 
@@ -53,6 +54,7 @@ const PaymentPortal = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Payment Portal'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>

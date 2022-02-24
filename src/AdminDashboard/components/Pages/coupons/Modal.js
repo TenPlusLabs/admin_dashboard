@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Form, {CouponUsageEditForm, SeeAllTable } from './Form';
-import { Update } from '@mui/icons-material';
+import { Close, Update } from '@mui/icons-material';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 
 const style = {
@@ -34,6 +34,7 @@ export function AddNewCoupon(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <Form />
         </Box>
       </Modal>
@@ -58,6 +59,7 @@ export default function UserApplicable(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <div class="row">
             <div class="col">
               <div class="form-outline">
@@ -81,7 +83,7 @@ export default function UserApplicable(prop) {
 }
 
 
-export function ChangeProgramApplicable(prop) {
+export function ChangeProductApplicable(prop) {
   const [openEdit, setEditOpen] = React.useState(false);
   const handleOpen = () => setEditOpen(true);
   const handleClose = () => setEditOpen(false);
@@ -96,6 +98,7 @@ export function ChangeProgramApplicable(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
         <div class="row">
             <div class="col">
               <div class="form-outline">
@@ -120,7 +123,7 @@ export function ChangeProgramApplicable(prop) {
   );
 }
 
-export function ChangeProgramSubCat(prop) {
+export function ChangeProductSubCat(prop) {
   const [openEdit, setEditOpen] = React.useState(false);
   const handleOpen = () => setEditOpen(true);
   const handleClose = () => setEditOpen(false);
@@ -135,6 +138,7 @@ export function ChangeProgramSubCat(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
         <div class="row">
             <div class="col">
               <div class="form-outline">
@@ -159,7 +163,7 @@ export function ChangeProgramSubCat(prop) {
   );
 }
 
-export function ChangeProgramExpDate(prop) {
+export function ChangeProductExpDate(prop) {
   const [openEdit, setEditOpen] = React.useState(false);
   const handleOpen = () => setEditOpen(true);
   const handleClose = () => setEditOpen(false);
@@ -174,6 +178,7 @@ export function ChangeProgramExpDate(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
         <div class="row">
             <div class="col">
               <div class="form-outline">
@@ -208,6 +213,7 @@ export function CustomerUsageViewAll(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <SeeAllTable />
         </Box>
       </Modal>
@@ -230,6 +236,7 @@ export function CouponUsageEdit(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <CouponUsageEditForm />
         </Box>
       </Modal>

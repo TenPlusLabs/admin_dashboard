@@ -15,14 +15,14 @@ export default function Form() {
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="program_applicable" class="form-control" placeholder="Program Applicable" />
+                        <input type="text" id="program_applicable" class="form-control" placeholder="Product Applicable" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="program_sub_category_name" class="form-control" placeholder="Program Sub Category Name" />
+                        <input type="text" id="program_sub_category_name" class="form-control" placeholder="Product Sub Category Name" />
                         </div>
                     </div>
                     <div class="col">

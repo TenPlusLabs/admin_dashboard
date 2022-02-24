@@ -4,6 +4,7 @@ import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import './Comment.css'
 import '../Pages/Pages.css'
 import { Link } from 'react-router-dom';
+import Navbar from '../../Navbar/Navbar';
 // import DatatablePage from '../datatable2';
 // import { MDBDataTable, MDBDataTableV5 } from 'mdbreact';
 
@@ -159,6 +160,7 @@ const Table = (props) =>{
 const Comment = (props) => {
     return (
         <main>
+            <Navbar pg_name='Comment'/>
             <div className='container-fluid mt-5'>
                     <div className='row ml-5'>
         
@@ -178,7 +180,7 @@ const Comment = (props) => {
             </TabList>
         </div>
         <TabPanel>
-                <div className='col-12' style={{width:'80%',overflowX:'auto',}}>
+                <div className='col-12' style={{overflowX:'auto',}}>
                   <table className=' bg-light p-5 shadow text-blue table-responsive'>
                   <thead>
                       <tr>

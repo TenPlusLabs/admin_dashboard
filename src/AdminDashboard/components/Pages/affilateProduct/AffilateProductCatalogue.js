@@ -1,6 +1,7 @@
 import React from 'react' 
 import { Link } from 'react-router-dom';
-import { TabList, TabPanel, Tabs } from 'react-tabs';
+import {TabPanel, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import {ProductCatalogue} from './Modal';
 
@@ -50,10 +51,11 @@ const AffilateProductCatalogue = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Affilate / Product Catatlogue'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-around mb-3'>
+        <div className='d-flex justify-content-left mb-3'>
             <div className='margin'> <ProductCatalogue /> </div>
         </div>
             <TabPanel>

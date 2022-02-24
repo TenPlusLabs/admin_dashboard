@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 import { Form, EditCustomerForm } from './Form';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -33,6 +34,7 @@ export function BasicModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <Form />
 
           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -62,6 +64,7 @@ export function EditCustomerModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
            <EditCustomerForm />
         </Box>
       </Modal>

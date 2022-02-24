@@ -1,7 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import {FormEdit, FormView} from './ModalForm'
+import {AddNewForm, FormEdit, FormView} from './ModalForm'
+import { Button } from '@mui/material';
+import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -14,6 +17,31 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+export function BasicModal(prop) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <div>
+      <span className='d-flex'>
+        <Button className=""  variant="outlined" onClick={handleOpen}  startIcon={<AddCircleTwoToneIcon />}>Add New</Button>
+     </span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+          <AddNewForm />
+        </Box>
+      </Modal>
+    </div>
+  );
+}
 
 export function FormModal(prop) {
   const [open, setOpen] = React.useState(false);
@@ -32,6 +60,7 @@ export function FormModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <FormEdit />
         </Box>
       </Modal>
@@ -56,6 +85,7 @@ export function FormViewModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
           <FormView />
         </Box>
       </Modal>

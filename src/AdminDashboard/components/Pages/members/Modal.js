@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import { EditForm } from './Form';
+import { Close } from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
@@ -30,6 +32,7 @@ export default function ActiveLinkModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
             <table className=' bg-light p-5 shadow text-blue'>
               <thead>
                 <th>Links</th>
@@ -77,6 +80,7 @@ export function SuspendedLinkModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
             <table className=' bg-light p-5 shadow text-blue'>
               <thead>
                 <th>Links</th>
@@ -112,31 +116,68 @@ export function SuspendedLinkModal(prop) {
 }
 
 
-// export function EditModal(prop) {
-//   const [openEdit, setEditOpen] = React.useState(false);
-//   const handleOpen = () => setEditOpen(true);
-//   const handleClose = () => setEditOpen(false);
+export function EditMembersModal(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
 
-//   return (
-//     <>
-//       <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
-//       <Modal
-//         open={openEdit}
-//         onClose={handleClose}
-//         aria-labelledby="modal-modal-title"
-//         aria-describedby="modal-modal-description"
-//       >
-//         <Box sx={style}>
-//            <EditForm />
+  return (
+    <>
+      <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+           <EditForm />
+        </Box>
+      </Modal>
+    </>
+  );
+}
 
-//           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-//             Text in a modal
-//           </Typography>
-//           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-//             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-//           </Typography> */}
-//         </Box>
-//       </Modal>
-//     </>
-//   );
-// }
+export function ActiveChannelModal(prop) {
+  const [openEdit, setEditOpen] = React.useState(false);
+  const handleOpen = () => setEditOpen(true);
+  const handleClose = () => setEditOpen(false);
+
+  return (
+    <>
+      <td className='cursor-pointer' onClick={handleOpen}>43</td>
+      <Modal
+        open={openEdit}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style} style={{width:'200px'}}>
+        <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+          <table className=' bg-light p-5 shadow text-blue table-responsive'>
+              <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Website</th>
+                    <th>Unknown Source</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>example.com</td>
+                    <td>unknownsourse.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>example.com</td>
+                    <td>unknownsourse.com</td>
+                  </tr>
+              </tbody>
+          </table>
+        </Box>  
+      </Modal>
+    </>
+  );
+}

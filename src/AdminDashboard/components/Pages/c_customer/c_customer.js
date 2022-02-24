@@ -1,5 +1,6 @@
 import React from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
+import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
 import {BasicModal, EditCustomerModal } from './Modal';
 
@@ -45,6 +46,7 @@ const ContactCustomer = (props) => {
    
     return (
         <main>
+            <Navbar pg_name='Customer Contact'/>
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
