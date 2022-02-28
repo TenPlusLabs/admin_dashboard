@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {TabPanel, Tabs } from 'react-tabs';
 import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import {ProductCatalogue} from './Modal';
+import {EditModal, ProductCatalogue} from './Modal';
 
 
 
@@ -30,7 +30,7 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span>
+                <EditModal />
                 <span className='text-primary mt-3 mr-3'><Link to={`/Affilateproduct/productView?prod=${id}`}>View</Link></span>
                 <span className='text-danger mt-3'>Delete</span>
                 </div>

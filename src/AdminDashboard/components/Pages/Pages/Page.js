@@ -35,6 +35,9 @@ const Table = (props) =>{
             <td>{visit_today}</td>
             <td>{visit_day}</td>
             <td>{visit_month}</td>
+            <td>
+                <span className='text-info mt-3'>Settings</span>
+            </td>
         </tr>
     )
     }
@@ -76,6 +79,7 @@ const Page = (props) => {
                                 <th>No of visit's today</th>
                                 <th>No of visit's in 7 days</th>
                                 <th>No of visit's in 1 month</th>
+                                <th>Page Settings</th>
                             </tr>
                         </thead>
                         <tbody>

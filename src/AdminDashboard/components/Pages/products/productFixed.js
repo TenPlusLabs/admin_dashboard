@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 import { TabList, TabPanel, Tab, Tabs } from 'react-tabs';
 import '../Pages/Pages.css'
-import BasicModal from '../Pages/Modal';
+import BasicModal, { EditProd } from './Modal';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar';
 
@@ -30,8 +30,10 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span>
-                <span className='text-primary mt-3 mr-3'><Link to={`/product/productFixedView?prod=${id}`}>View</Link></span>
+                <EditProd />
+                {/* <span className='text-primary mt-3 mr-3'>
+                    <Link to={`/product/productSubView?prod=${id}`}>View</Link>
+                </span> */}
                 <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>

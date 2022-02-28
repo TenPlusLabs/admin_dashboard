@@ -76,19 +76,46 @@ export function FormEdit() {
 export function FormView() {
     return (
         <div>
-            <h4>Page Name: Affilate</h4>
+            <h4>Form Name: Application Form</h4>
             <hr/>
-            <table className=' bg-light p-5  text-blue'>
+            <table className=' bg-light p-5 text-blue'>
                         <thead>
                             <tr>
                                 <th>First Name</th>
                                 <th>Last Name</th>
+                                <th>Form Name</th>
+                                <th>Question</th>
+                                <th>Responses (6)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>yo</td>
-                                <td>yo</td>
+                                <td>Hatake</td>
+                                <td>Kakashi</td>
+                                <td>Applications Form</td>
+                                <td>How to seal Nine Tails</td>
+                                <td>
+                                    <div style={{maxHeight:100,overflowY:'scroll'}}>
+                                        <p>
+                                            <b>1)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                        <p>
+                                            <b>2)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                        <p>
+                                            <b>3)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                        <p>
+                                            <b>4)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                        <p>
+                                            <b>5)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                        <p>
+                                            <b>6)</b> Using The Uzumaki Clan Chakra Sealing Jutsu
+                                        </p>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -77,15 +77,15 @@ const Coupons = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-around mb-3'>
-            <TabList className='col-md-5 d-flex justify-content-around ml-5'>
-                <Tab><button className='btn active'>All(3)</button></Tab>
+        <div className='d-flex justify-content-left ml-4 mb-3'>
+            {/* <TabList className='col-md-5 d-flex justify-content-around ml-5'> */}
+                {/* <Tab><button className='btn active'>All(3)</button></Tab>
                 <Tab><button className='btn'>Published(0)</button></Tab>
                 <Tab><button className='btn active'>Draft(3)</button></Tab>
-                <Tab><button className='btn'>Bin(0)</button></Tab>
+                <Tab><button className='btn'>Bin(0)</button></Tab> */}
                 {/* <Tab><BasicModal /></Tab> */}
                 {/* <BasicModal /> */}
-            </TabList>
+            {/* </TabList> */}
             <div className='margin'> <AddNewCoupon /> </div>
         </div>
             <TabPanel>

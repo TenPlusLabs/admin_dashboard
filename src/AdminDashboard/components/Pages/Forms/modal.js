@@ -11,7 +11,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 'auto',
+  minHeight:'250px',
+  maxWidth: '800px',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -86,11 +88,68 @@ export function FormViewModal(prop) {
       >
         <Box sx={style}>
         <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
-          <FormView />
+            <div>
+              <h4>Form Names:</h4>
+              <hr/>
+              <table className=' bg-light p-5 text-blue'>
+                <thead>
+                  <tr>
+                    <th>Form Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Question</th>
+                    <th>Responses</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Application</td>
+                     <td>Hatake</td>
+                     <td>Kakashi</td>
+                     <td>How to seal nine tails</td>
+                     <ViewResopnse />
+                   </tr>
+                   <tr>
+                    <td>Application</td>
+                     <td>Might</td>
+                     <td>Guy</td>
+                     <td>How to seal nine tails</td>
+                     <ViewResopnse />
+                   </tr>
+                   <tr>
+                    <td>Application</td>
+                     <td>Rock</td>
+                     <td>Lee</td>
+                     <td>How to seal nine tails</td>
+                     <ViewResopnse />
+                   </tr>
+                  </tbody>
+              </table>
+            </div>
         </Box>
       </Modal>
     </div>
   );
 }
 
-
+function ViewResopnse(){
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    return(
+        <>
+          <td className='cursor-pointer text-primary' onClick={handleOpen}>View</td>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+          <Box sx={style}>
+          <Close style={{marginLeft:'auto',color:'#333'}} className='mb-2 cursor-pointer' onClick={handleClose} />
+            <FormView />
+          </Box>
+        </Modal>
+        </>
+    )
+}

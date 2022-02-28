@@ -2,7 +2,7 @@ import React from 'react'
 import {  TabPanel, Tabs } from 'react-tabs';
 import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import { AddNewPayment } from './modal';
+import { AddDisputeNewPayment, EditDisputeNewPayment, DisputeViewModal } from './modal';
 
 
 
@@ -16,12 +16,18 @@ const Rows = [
 ]
 
 const Table = (props) =>{
-    const {id, page_title,page_url,date_published,status,exp_date, visit_today, visit_day, coupon_number  }  = props;
+    const {id, page_title,page_url,date_published,status,exp_date, visit_today,  coupon_number  }  = props;
 
     return(        
 
         <tr>
             <td>{id}</td>
+            <td className='page_title' style={{width:'150px'}}> {page_title}
+                <div className='d-flex display-none'>
+                <EditDisputeNewPayment />
+                <span className='text-danger mt-3'>Delete</span>
+                </div>
+             </td>
             <td>{page_title}</td>
             <td className='page_title'> 
                 {date_published}
@@ -37,12 +43,9 @@ const Table = (props) =>{
             <td className='page_title'> 
                 {exp_date}
              </td>
-            <td className='page_title'> 
-                {visit_day} 
-             </td>
-            <td className='page_title  cusuor-pointer'> 
+             <td className='page_title  cusuor-pointer'> 
                 <div className='d-flex'>
-                {/* <EcommercePaymentModal /> */}
+                <DisputeViewModal />
                 </div>
              </td>
         </tr>
@@ -56,11 +59,10 @@ const DisputesPortalPayments = (props) => {
         <div className='container-fluid mt-5'>
                 <div className='row ml-5 '>
     <Tabs>
-        <div className='d-flex justify-content-right mb-3'>
-            <div className='margin'> <AddNewPayment /> </div>
+        <div className='d-flex justify-content-left mb-3'>
+            <div className='margin'> <AddDisputeNewPayment /> </div>
         </div>
             <TabPanel>
-                
                     <div className='col-12'>
                     <table className=' bg-light p-5 shadow text-blue table-responsive'>
                         <thead>
@@ -74,6 +76,7 @@ const DisputesPortalPayments = (props) => {
                                 <th>Status</th>
                                 <th>Total Payments(#2000)</th>
                                 <th>Total Applicants(30)</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>

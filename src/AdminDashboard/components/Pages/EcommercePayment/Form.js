@@ -10,12 +10,29 @@ export default function Form() {
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" src="#" placeholder="Program Name" id="program_name" class="form-control" />
+                        <input type="text" src="#" placeholder="Customer First Name" id="fname" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
-                        <input type="text" id="program_applicable" class="form-control" placeholder="Program Applicable" />
+                        <input type="text" id="lname" class="form-control" placeholder="Customer Last Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" src="#" placeholder="Product Name" id="program_name" class="form-control" />
+                        </div>
+                    </div>
+                    {/* <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="program_applicable" class="form-control" placeholder="Product Applicable" />
+                        </div>
+                    </div> */}
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="status" class="form-control" placeholder="Status" />
                         </div>
                     </div>
                 </div>
@@ -43,7 +60,7 @@ export default function Form() {
                     <div class="col">
                         <div class="form-outline">
                             <label for='customer_usage'>
-                                <input type="text" placeholder='Total Applicants' id="total_applicants" class="form-control" />
+                                <input type="text" placeholder='Total Product Sale' id="total_product_sale" class="form-control" />
                             </label>
                         </div>
                     </div>
@@ -78,7 +95,7 @@ export function SeeAllTable() {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
-                    <th>Program Name</th>
+                    <th>Product Name</th>
                     <th>Coupon Used</th>
                     <th>Amount Paid</th>
                     <th>Outstanding</th>

@@ -2,7 +2,7 @@ import React from 'react'
 import {  TabPanel,Tabs } from 'react-tabs';
 import Navbar from '../../Navbar/Navbar';
 import '../Pages/Pages.css'
-import { AddNewPayment, PortalViewModal } from './modal';
+import { AddPortalNewPayment, EditPortalNewPayment, PortalViewModal } from './modal';
 
 
 
@@ -30,7 +30,8 @@ const Table = (props) =>{
             <td>{id}</td>
             <td className='page_title' style={{width:'150px'}}> {page_title}
                 <div className='d-flex display-none'>
-                <span className='text-secondary mt-3 mr-3'>Edit</span><span className='text-danger mt-3'>Delete</span>
+                <EditPortalNewPayment />
+                <span className='text-danger mt-3'>Delete</span>
                 </div>
              </td>
             <td>{page_url}</td>
@@ -49,7 +50,7 @@ const Table = (props) =>{
     )
     }
 
-
+    
 const PaymentPortal = (props) => {
    
     return (
@@ -59,7 +60,7 @@ const PaymentPortal = (props) => {
                 <div className='row ml-5 '>
     <Tabs>
         <div className='d-flex justify-content-left mb-3'>
-            <div className='margin'> <AddNewPayment /> </div>
+            <div className='margin'> <AddPortalNewPayment /> </div>
         </div>
             <TabPanel>
                     <div className='col-12'>
