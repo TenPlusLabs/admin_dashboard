@@ -36,7 +36,7 @@ const Sidebar = () => {
       // alert('set o',subList)
     } else {
       setSubList(val);
-      alert(subList);
+      // alert(subList);
     }
   }
 
@@ -311,8 +311,9 @@ const Sidebar = () => {
                           className={`sidebar-item has-sub ${
                             subList === 9 && "subListActive"
                           }`}
-                          onMouseEnter={() => setSubList(9)}
-                          onMouseLeave={() => setSubList(0)}
+                          // onMouseEnter={() => setSubList(9)}
+                          // onMouseLeave={() => setSubList(0)}
+                          onClick={() => showSubMenu(9)}
                         >
                           <a
                             href="#"
@@ -321,37 +322,34 @@ const Sidebar = () => {
                           >
                             <span>Product</span>
                           </a>
-                          <ul
-                            className={`submenu ${
-                              subList === 9 && "subListActive"
-                            }`}
-                            style={{ marginLeft: -30 }}
-                          >
-                            <li className="submenu-item">
-                              <NavLink to="/productCatalogue">
-                                Catalogue
-                              </NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/productFixed">Fixed Price</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/productSelect">
-                                Product Plans
-                              </NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/productSub">Subscriptions</NavLink>
-                            </li>
-                          </ul>
                         </li>
+                        <ul
+                          className={`submenu ${
+                            subList === 9 && "subListActive"
+                          }`}
+                          style={{ marginLeft: -30 }}
+                        >
+                          <li className="submenu-item">
+                            <NavLink to="/productCatalogue">Catalogue</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/productFixed">Fixed Price</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/productSelect">Product Plans</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/productSub">Subscriptions</NavLink>
+                          </li>
+                        </ul>
 
                         <li
                           className={`sidebar-item has-sub ${
                             subList === 10 && "subListActive"
                           }`}
-                          onMouseEnter={() => setSubList(10)}
-                          onMouseLeave={() => setSubList(0)}
+                          // onMouseEnter={() => setSubList(10)}
+                          // onMouseLeave={() => setSubList(0)}
+                          onClick={() => showSubMenu(10)}
                         >
                           <a
                             href="#"
@@ -360,38 +358,37 @@ const Sidebar = () => {
                           >
                             <span>Projects</span>
                           </a>
-                          <ul
-                            className={`submenu ${
-                              subList === 10 && "subListActive"
-                            }`}
-                            style={{ marginLeft: -30 }}
-                          >
-                            <li className="submenu-item">
-                              <NavLink to="/project_order">Orders</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/new_projects">New Projects</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/pending_project">Pending</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/ongoing_project">Ongoing</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/completed_project">
-                                Completed
-                              </NavLink>
-                            </li>
-                          </ul>
                         </li>
+                        <ul
+                          className={`submenu ${
+                            subList === 10 && "subListActive"
+                          }`}
+                          style={{ marginLeft: -30 }}
+                        >
+                          <li className="submenu-item">
+                            <NavLink to="/project_order">Orders</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/new_projects">New Projects</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/pending_project">Pending</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/ongoing_project">Ongoing</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/completed_project">Completed</NavLink>
+                          </li>
+                        </ul>
 
                         <li
                           className={`sidebar-item has-sub ${
                             subList === 15 && "subListActive"
                           }`}
-                          onMouseEnter={() => setSubList(15)}
-                          onMouseLeave={() => setSubList(0)}
+                          // onMouseEnter={() => setSubList(15)}
+                          // onMouseLeave={() => setSubList(0)}
+                          onClick={() => showSubMenu(15)}
                         >
                           <a
                             href="#"
@@ -400,22 +397,20 @@ const Sidebar = () => {
                           >
                             <span>Payments</span>
                           </a>
-                          <ul
-                            className={`submenu ${
-                              subList === 15 && "subListActive"
-                            }`}
-                            style={{ marginLeft: -30 }}
-                          >
-                            <li className="submenu-item">
-                              <NavLink to="/EcommercePayment">
-                                Ecommerce
-                              </NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/DisputePayment">Disputes</NavLink>
-                            </li>
-                          </ul>
                         </li>
+                        <ul
+                          className={`submenu ${
+                            subList === 15 && "subListActive"
+                          }`}
+                          style={{ marginLeft: -30 }}
+                        >
+                          <li className="submenu-item">
+                            <NavLink to="/EcommercePayment">Ecommerce</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/DisputePayment">Disputes</NavLink>
+                          </li>
+                        </ul>
 
                         <li className="submenu-item">
                           <NavLink to="quotes">Quotes</NavLink>
@@ -474,12 +469,14 @@ const Sidebar = () => {
                         <li className="submenu-item">
                           <NavLink to="/subscription">Subscriptions</NavLink>
                         </li>
+
                         <li
                           className={`sidebar-item has-sub ${
                             subList === 25 && "subListActive"
                           }`}
-                          onMouseEnter={() => setSubList(25)}
-                          onMouseLeave={() => setSubList(0)}
+                          // onMouseEnter={() => setSubList(25)}
+                          // onMouseLeave={() => setSubList(0)}
+                          onClick={() => showSubMenu(25)}
                         >
                           <a
                             href="#"
@@ -488,22 +485,23 @@ const Sidebar = () => {
                           >
                             <span>Payments</span>
                           </a>
-                          <ul
-                            className={`submenu ${
-                              subList === 25 && "subListActive"
-                            }`}
-                            style={{ marginLeft: -30 }}
-                          >
-                            <li className="submenu-item">
-                              <NavLink to="/paymentPortal">Portal</NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/DisputePortalPayment">
-                                Disputes
-                              </NavLink>
-                            </li>
-                          </ul>
                         </li>
+                        <ul
+                          className={`submenu ${
+                            subList === 25 && "subListActive"
+                          }`}
+                          style={{ marginLeft: -30 }}
+                        >
+                          <li className="submenu-item">
+                            <NavLink to="/paymentPortal">Portal</NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/DisputePortalPayment">
+                              Disputes
+                            </NavLink>
+                          </li>
+                        </ul>
+
                         <li className="submenu-item">
                           <NavLink to="/userAccount">Portal Accounts</NavLink>
                         </li>
@@ -533,8 +531,9 @@ const Sidebar = () => {
                           className={`sidebar-item has-sub ${
                             subList === 56 && "subListActive"
                           }`}
-                          onMouseEnter={() => setSubList(56)}
-                          onMouseLeave={() => setSubList(0)}
+                          // onMouseEnter={() => setSubList(56)}
+                          // onMouseLeave={() => setSubList(0)}
+                          onClick={() => showSubMenu(56)}
                         >
                           <a
                             href="#"
@@ -543,29 +542,30 @@ const Sidebar = () => {
                           >
                             <span>Product Catalogue</span>
                           </a>
-                          <ul
-                            className={`submenu ${
-                              subList === 56 && "subListActive"
-                            }`}
-                            style={{ marginLeft: -30 }}
-                          >
-                            <li className="submenu-item">
-                              <NavLink to="/AffilateProductCatalogue">
-                                Product
-                              </NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/AffilateActiveProduct">
-                                Active Product
-                              </NavLink>
-                            </li>
-                            <li className="submenu-item">
-                              <NavLink to="/AffilateSuspendedProduct">
-                                Suspended Product
-                              </NavLink>
-                            </li>
-                          </ul>
                         </li>
+                        <ul
+                          className={`submenu ${
+                            subList === 56 && "subListActive"
+                          }`}
+                          style={{ marginLeft: -30 }}
+                        >
+                          <li className="submenu-item">
+                            <NavLink to="/AffilateProductCatalogue">
+                              Product
+                            </NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/AffilateActiveProduct">
+                              Active Product
+                            </NavLink>
+                          </li>
+                          <li className="submenu-item">
+                            <NavLink to="/AffilateSuspendedProduct">
+                              Suspended Product
+                            </NavLink>
+                          </li>
+                        </ul>
+
                         <li className="submenu-item ">
                           <NavLink to="/affilatePages">Pages</NavLink>
                         </li>

@@ -1,19 +1,19 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import { Button } from '@mui/material';
-import { Save } from '@mui/icons-material';
-import NewRoleForm, { EditUserForm } from './Form';
-import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { Button } from "@mui/material";
+import { Save } from "@mui/icons-material";
+import NewRoleForm, { EditUserForm } from "./Form";
+import AddCircleTwoToneIcon from "@mui/icons-material/AddCircleTwoTone";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
@@ -25,7 +25,9 @@ export default function BasicModal(prop) {
 
   return (
     <div>
-      <span class='text-primary cursor-pointer' onClick={handleOpen}>change</span>
+      <span class="text-primary cursor-pointer" onClick={handleOpen}>
+        change
+      </span>
       <Modal
         open={open}
         onClose={handleClose}
@@ -35,23 +37,24 @@ export default function BasicModal(prop) {
         <Box sx={style}>
           <h3>Change Role</h3>
           <hr />
-           <select class='form-control'>
-              <option>Super Admin</option>
-              <option>Admin</option>
-              <option>Contributor</option>
-              <option>Editor</option>
-              <option>Author</option>
-              <option>Custom Role 1</option>
-              <option>Custom Role 2</option>
-           </select>
-           <br/>
-           <Button className=""  variant="outlined"  startIcon={<Save />}>Change Role</Button>
+          <select class="form-control">
+            <option>Super Admin</option>
+            <option>Admin</option>
+            <option>Contributor</option>
+            <option>Editor</option>
+            <option>Author</option>
+            <option>Custom Role 1</option>
+            <option>Custom Role 2</option>
+          </select>
+          <br />
+          <Button className="" variant="outlined" startIcon={<Save />}>
+            Change Role
+          </Button>
         </Box>
       </Modal>
     </div>
   );
 }
-
 
 export function NewRole(prop) {
   const [open, setOpen] = React.useState(false);
@@ -60,21 +63,27 @@ export function NewRole(prop) {
 
   return (
     <div>
-      <Button onClick={handleOpen} className="mt-4"  variant="outlined"  startIcon={<AddCircleTwoToneIcon />}>Add New</Button>
+      <Button
+        onClick={handleOpen}
+        className="mt-4"
+        variant="outlined"
+        startIcon={<AddCircleTwoToneIcon />}
+      >
+        Add New
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-           <NewRoleForm />
+        <Box sx={style} style={{ height: "600px", overflowY: "auto" }}>
+          <NewRoleForm />
         </Box>
       </Modal>
     </div>
   );
 }
-
 
 export function EditUserModal(prop) {
   const [open, setOpen] = React.useState(false);
@@ -83,7 +92,9 @@ export function EditUserModal(prop) {
 
   return (
     <>
-      <span className='text-secondary mt-3 mr-3' onClick={handleOpen}>Edit</span>
+      <span className="text-secondary mt-3 mr-3" onClick={handleOpen}>
+        Edit
+      </span>
       <Modal
         open={open}
         onClose={handleClose}
@@ -91,7 +102,7 @@ export function EditUserModal(prop) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-           <EditUserForm />
+          <EditUserForm />
         </Box>
       </Modal>
     </>
